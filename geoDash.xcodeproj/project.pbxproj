@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A1F1D37270300C51406 /* AppDelegate.swift */; };
+		B3CC3A221D37270300C51406 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A211D37270300C51406 /* GameScene.sks */; };
+		B3CC3A241D37270300C51406 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
+		B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A251D37270300C51406 /* GameViewController.swift */; };
+		B3CC3A291D37270300C51406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A271D37270300C51406 /* Main.storyboard */; };
+		B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A2A1D37270300C51406 /* Assets.xcassets */; };
+		B3CC3A2E1D37270300C51406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A2C1D37270300C51406 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B3CC3A1C1D37270300C51406 /* geoDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3CC3A1F1D37270300C51406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B3CC3A211D37270300C51406 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B3CC3A231D37270300C51406 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B3CC3A251D37270300C51406 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B3CC3A281D37270300C51406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3CC3A2A1D37270300C51406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3CC3A2D1D37270300C51406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3CC3A2F1D37270300C51406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3CC3A191D37270300C51406 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B3CC3A131D37270200C51406 = {
+			isa = PBXGroup;
+			children = (
+				B3CC3A1E1D37270300C51406 /* geoDash */,
+				B3CC3A1D1D37270300C51406 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3CC3A1D1D37270300C51406 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3CC3A1C1D37270300C51406 /* geoDash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3CC3A1E1D37270300C51406 /* geoDash */ = {
+			isa = PBXGroup;
+			children = (
+				B3CC3A1F1D37270300C51406 /* AppDelegate.swift */,
+				B3CC3A211D37270300C51406 /* GameScene.sks */,
+				B3CC3A231D37270300C51406 /* GameScene.swift */,
+				B3CC3A251D37270300C51406 /* GameViewController.swift */,
+				B3CC3A271D37270300C51406 /* Main.storyboard */,
+				B3CC3A2A1D37270300C51406 /* Assets.xcassets */,
+				B3CC3A2C1D37270300C51406 /* LaunchScreen.storyboard */,
+				B3CC3A2F1D37270300C51406 /* Info.plist */,
+			);
+			path = geoDash;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3CC3A1B1D37270300C51406 /* geoDash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3CC3A321D37270300C51406 /* Build configuration list for PBXNativeTarget "geoDash" */;
+			buildPhases = (
+				B3CC3A181D37270300C51406 /* Sources */,
+				B3CC3A191D37270300C51406 /* Frameworks */,
+				B3CC3A1A1D37270300C51406 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = geoDash;
+			productName = geoDash;
+			productReference = B3CC3A1C1D37270300C51406 /* geoDash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3CC3A141D37270200C51406 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Aldin Fajic";
+				TargetAttributes = {
+					B3CC3A1B1D37270300C51406 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B3CC3A171D37270300C51406 /* Build configuration list for PBXProject "geoDash" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3CC3A131D37270200C51406;
+			productRefGroup = B3CC3A1D1D37270300C51406 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3CC3A1B1D37270300C51406 /* geoDash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3CC3A1A1D37270300C51406 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CC3A221D37270300C51406 /* GameScene.sks in Resources */,
+				B3CC3A2E1D37270300C51406 /* LaunchScreen.storyboard in Resources */,
+				B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */,
+				B3CC3A291D37270300C51406 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3CC3A181D37270300C51406 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3CC3A241D37270300C51406 /* GameScene.swift in Sources */,
+				B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */,
+				B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B3CC3A271D37270300C51406 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3CC3A281D37270300C51406 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3CC3A2C1D37270300C51406 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3CC3A2D1D37270300C51406 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3CC3A301D37270300C51406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B3CC3A311D37270300C51406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3CC3A331D37270300C51406 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = geoDash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3CC3A341D37270300C51406 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = geoDash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3CC3A171D37270300C51406 /* Build configuration list for PBXProject "geoDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CC3A301D37270300C51406 /* Debug */,
+				B3CC3A311D37270300C51406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3CC3A321D37270300C51406 /* Build configuration list for PBXNativeTarget "geoDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3CC3A331D37270300C51406 /* Debug */,
+				B3CC3A341D37270300C51406 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3CC3A141D37270200C51406 /* Project object */;
+}
