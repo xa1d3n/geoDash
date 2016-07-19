@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */ = {isa = PBXBuildFile; fileRef = B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */; };
 		B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A1F1D37270300C51406 /* AppDelegate.swift */; };
 		B3CC3A221D37270300C51406 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A211D37270300C51406 /* GameScene.sks */; };
 		B3CC3A241D37270300C51406 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Obstacle1.sks; path = ../Obstacle1.sks; sourceTree = "<group>"; };
 		B3CC3A1C1D37270300C51406 /* geoDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CC3A1F1D37270300C51406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3CC3A211D37270300C51406 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		B3CC3A1E1D37270300C51406 /* geoDash */ = {
 			isa = PBXGroup;
 			children = (
+				B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */,
 				B3CC3A1F1D37270300C51406 /* AppDelegate.swift */,
 				B3CC3A211D37270300C51406 /* GameScene.sks */,
 				B3CC3A231D37270300C51406 /* GameScene.swift */,
@@ -131,6 +134,7 @@
 				B3CC3A221D37270300C51406 /* GameScene.sks in Resources */,
 				B3CC3A2E1D37270300C51406 /* LaunchScreen.storyboard in Resources */,
 				B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */,
+				B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */,
 				B3CC3A291D37270300C51406 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +300,7 @@
 				B3CC3A341D37270300C51406 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

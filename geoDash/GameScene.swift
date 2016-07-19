@@ -9,37 +9,35 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
+    var referenceTimer = NSTimer()
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        
-        self.addChild(myLabel)
+        referenceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.pickReference), userInfo: nil, repeats: true)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+       
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+ 
+    }
+    
+    func pickReference() {
+        addReference("Obstacle1")
+    }
+    
+    func addReference(obstacleName: String) {
+        let reference = NSBundle.mainBundle().pathForResource(obstacleName, ofType: "sks")
+        let referenceNode = SKReferenceNode(URL: NSURL(fileURLWithPath: reference!))
+        
+        referenceNode.position = CGPoint(x: (self.scene?.size.width)!, y: 100)
+        self.addChild(referenceNode)
+        
+        // animate the node
+        referenceNode.runAction(SKAction.moveToX(0 - referenceNode.scene!.frame.width, duration: 10.0))
+        
+        
     }
 }
