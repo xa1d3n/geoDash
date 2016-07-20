@@ -95,12 +95,53 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // remove the affected node
         spriteToExplode.removeFromParent()
         addChild(explosion!)
+        gameOver()
+    }
+    
+    func gameOver() {
+        let retryButton = SKSpriteNode(imageNamed: "retry")
+        // when deterining touched node
+        retryButton.name = "retryBtn"
+        // wait 1 second before showing the retry
+        let waitDuration = SKAction.waitForDuration(1.0)
+        let fadeIn = SKAction.fadeInWithDuration(0.3)
+        retryButton.alpha = 0
+        retryButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
+        self.addChild(retryButton)
+        retryButton.runAction(SKAction.sequence([waitDuration,fadeIn]))
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // detect touching action
         isTouching = true
+        
+        for touch in touches {
+            // get touch location
+            let location = touch.locationInNode(self)
+            // get node being touched
+            let node = self.nodeAtPoint(location)
+            // check if retry button is clicked
+            if node.name == "retryBtn" {
+                restartScene()
+            }
+        }
+        
         jump()
+    }
+    
+    func restartScene() {
+        // load up the scene again
+        let scene = GameScene(fileNamed: "GameScene")
+        // create a transition effect
+        let transition = SKTransition.crossFadeWithDuration(0.5)
+        // create a new view
+        let view = self.view as SKView!
+        // fill the whole screen
+        scene?.scaleMode = SKSceneScaleMode.AspectFill
+        // load scene onto view
+        view.presentScene(scene!, transition: transition)
+        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
