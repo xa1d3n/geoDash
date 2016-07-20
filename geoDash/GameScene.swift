@@ -149,7 +149,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
- 
+        // check half of player is past left most edge
+        if Player.position.x <= 0 - Player.frame.width / 2{
+            gameOver()
+            for node in self.children {
+                node.removeAllActions()
+            }
+            referenceTimer.invalidate()
+        }
     }
     
     func pickReference() {
