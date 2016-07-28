@@ -19,7 +19,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var obstacleArray = [String]()
     
+    var score = Int()
+    var highScore = Int()
+    var scoreTimer = NSTimer()
+    var scoreLabel = SKLabelNode()
+    var highScoreLabel = SKLabelNode()
+    
     override func didMoveToView(view: SKView) {
+        // update labels
+        highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
+        scoreLabel = scene?.childNodeWithName("ScoreLabel") as! SKLabelNode
+        
+        // get high score
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.integerForKey("highScore") != 0 {
+            highScore = userDefaults.integerForKey("highScore")
+            highScoreLabel.text = "Highscore : \(highScore)"
+        }else {
+            highScore = 0
+            highScoreLabel.text = "Highscore : \(highScore)"
+        }
+        
+        scoreLabel.text = "Score : \(score)"
+        
         // scene will handle all the contacts within project
         self.physicsWorld.contactDelegate = self
         self.physicsWorld.gravity = CGVectorMake(0, -30)
@@ -30,6 +52,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Player.physicsBody?.contactTestBitMask = 1 | 3
         
         referenceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.pickReference), userInfo: nil, repeats: true)
+        
+        scoreTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.addScore), userInfo: nil, repeats: true)
+    }
+    
+    func addScore() {
+        score += 1
+        scoreLabel.text = "Score : \(score)"
+        
+        if score > highScore {
+            highScore = score
+            highScoreLabel.text = "Highscore : \(highScore)"
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            // set new high score
+            userDefaults.setInteger(highScore, forKey: "highScore")
+        }
     }
     
     func jump() {
@@ -99,6 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        scoreTimer.invalidate()
         let retryButton = SKSpriteNode(imageNamed: "retry")
         // when deterining touched node
         retryButton.name = "retryBtn"
@@ -179,7 +217,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // animate the node
         referenceNode.runAction(SKAction.sequence([moveAction, destroyAction]))
-        
-        
     }
 }

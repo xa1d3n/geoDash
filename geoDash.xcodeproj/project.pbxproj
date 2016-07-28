@@ -30,6 +30,7 @@
 		A0064D441D3EA6FF007EF90F /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
 		A0064D461D3EA8B5007EF90F /* Obstacle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle2.sks; sourceTree = "<group>"; };
 		A0064D481D3EAB71007EF90F /* Obstacle3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle3.sks; sourceTree = "<group>"; };
+		B33BB43D1D49814E00E0254B /* FlappyFont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlappyFont.TTF; sourceTree = "<group>"; };
 		B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Obstacle1.sks; path = ../Obstacle1.sks; sourceTree = "<group>"; };
 		B3CC3A1C1D37270300C51406 /* geoDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CC3A1F1D37270300C51406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 		B3CC3A1E1D37270300C51406 /* geoDash */ = {
 			isa = PBXGroup;
 			children = (
+				B33BB43D1D49814E00E0254B /* FlappyFont.TTF */,
 				A0064D441D3EA6FF007EF90F /* Explosion.wav */,
 				B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */,
 				A0064D461D3EA8B5007EF90F /* Obstacle2.sks */,
