@@ -44,12 +44,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // scene will handle all the contacts within project
         self.physicsWorld.contactDelegate = self
-        self.physicsWorld.gravity = CGVectorMake(0, -30)
+        self.physicsWorld.gravity = CGVectorMake(0, 3)
         // get the player from the scene
         Player = scene?.childNodeWithName("Person") as! SKSpriteNode
         // can collide with ground and obstacles
         Player.physicsBody?.collisionBitMask = 1 | 3
         Player.physicsBody?.contactTestBitMask = 1 | 3
+        Player.alpha = 0.1
+        
+        let ground = scene?.childNodeWithName("Ground") as! SKSpriteNode
+        ground.alpha = 0
+        
         
         referenceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.pickReference), userInfo: nil, repeats: true)
         
@@ -59,6 +64,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addScore() {
         score += 1
         scoreLabel.text = "Score : \(score)"
+        
+        let light = Player.childNodeWithName("light") as! SKLightNode
+        // light.falloff = 3
+        let currfalloff = light.falloff
+        if currfalloff > 1 {
+            let newFalloff = currfalloff - 1
+            light.falloff = newFalloff
+        }
+        
+        
         
         if score > highScore {
             highScore = score
@@ -72,10 +87,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func jump() {
         // only jump if not currently jumping and if player touches screen
         if isTouching == true {
-            if isJumping == false {
-                Player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 600))
+
+                Player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -200))
                 isJumping = true
-            }
+
         }
     }
     
@@ -165,6 +180,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
+        let light = Player.childNodeWithName("light") as! SKLightNode
+        // light.falloff = 3
+        
+            let currfalloff = light.falloff
+            let newFalloff = currfalloff + 1
+            light.falloff = newFalloff
+       
+        
         jump()
     }
     
@@ -183,7 +206,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let light = Player.childNodeWithName("light") as! SKLightNode
+       // light.falloff = 3
         isTouching = false
+        
+        
+        
     }
    
     override func update(currentTime: CFTimeInterval) {
@@ -198,7 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func pickReference() {
-        obstacleArray = ["Obstacle1", "Obstacle2", "Obstacle3"]
+        obstacleArray = ["Obstacle1", "Obstacle3"]
         let randomNumber = arc4random() % UInt32(obstacleArray.count)
         addReference(obstacleArray[Int(randomNumber)])
     }
