@@ -17,13 +17,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isJumping = Bool()
     var isTouching = Bool()
     
-    var obstacleArray = [String]()
+    let obstacleArray = ["Obstacle1", "Obstacle3"]
+    let lightColors = [UIColor.yellowColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.cyanColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.whiteColor(), UIColor.magentaColor()]
     
     var score = Int()
     var highScore = Int()
     var scoreTimer = NSTimer()
     var scoreLabel = SKLabelNode()
     var highScoreLabel = SKLabelNode()
+    
+    var didTouchBoundries = false
     
     override func didMoveToView(view: SKView) {
         // update labels
@@ -52,10 +55,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Player.physicsBody?.contactTestBitMask = 1 | 3
         Player.alpha = 0.1
         
-        let ground = scene?.childNodeWithName("Ground") as! SKSpriteNode
-        ground.alpha = 0
-        
-        
         referenceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.pickReference), userInfo: nil, repeats: true)
         
         scoreTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.addScore), userInfo: nil, repeats: true)
@@ -63,13 +62,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addScore() {
         score += 1
+        if score % 5 == 0 {
+            let light = Player.childNodeWithName("light") as! SKLightNode
+            let randomNumber = arc4random() % UInt32(lightColors.count)
+            light.lightColor = lightColors[Int(randomNumber)]
+        }
         scoreLabel.text = "Score : \(score)"
         
         let light = Player.childNodeWithName("light") as! SKLightNode
         // light.falloff = 3
         let currfalloff = light.falloff
         if currfalloff > 1 {
-            let newFalloff = currfalloff - 1
+            let newFalloff = currfalloff - 1.5
             light.falloff = newFalloff
         }
         
@@ -98,40 +102,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let bodyA = contact.bodyA.node
         let bodyB = contact.bodyB.node
         
-        // detect player & ground contact
-        if bodyA?.physicsBody?.categoryBitMask == 2 && bodyB?.physicsBody?.categoryBitMask == 1 {
-            isJumping = false
-            jump()
-        }
-        else if bodyA?.physicsBody?.categoryBitMask == 1 && bodyB?.physicsBody?.categoryBitMask == 2 {
-            isJumping = false
-            jump()
-        }
-        
         // detect player & obstacles contact
-        else if bodyA?.physicsBody?.categoryBitMask == 2 && bodyB?.physicsBody?.categoryBitMask == 3 {
-            isJumping = false
-            jump()
+        if bodyA?.physicsBody?.categoryBitMask == 2 && bodyB?.physicsBody?.categoryBitMask == 3 {
+            pauseAndRemoveNodes()
         }
         else if bodyA?.physicsBody?.categoryBitMask == 3 && bodyB?.physicsBody?.categoryBitMask == 2 {
-            isJumping = false
-            jump()
+            pauseAndRemoveNodes()
         }
         
         // detect player & enemy contact
         else if bodyA?.physicsBody?.categoryBitMask == 2 && bodyB?.physicsBody?.categoryBitMask == 4 {
-            for node in self.children {
-                node.removeAllActions()
-            }
-            referenceTimer.invalidate()
-            buildExplosion(Player)
+            pauseAndRemoveNodes()
         }
         else if bodyA?.physicsBody?.categoryBitMask == 4 && bodyB?.physicsBody?.categoryBitMask == 2 {
-            for node in self.children {
-                node.removeAllActions()
-            }
-            referenceTimer.invalidate()
-            buildExplosion(Player)
+            pauseAndRemoveNodes()
         }
     }
     
@@ -181,11 +165,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         let light = Player.childNodeWithName("light") as! SKLightNode
-        // light.falloff = 3
-        
-            let currfalloff = light.falloff
-            let newFalloff = currfalloff + 1
-            light.falloff = newFalloff
+        let currfalloff = light.falloff
+        let newFalloff = currfalloff + 1
+        light.falloff = newFalloff
        
         
         jump()
@@ -206,7 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let light = Player.childNodeWithName("light") as! SKLightNode
+        _ = Player.childNodeWithName("light") as! SKLightNode
        // light.falloff = 3
         isTouching = false
         
@@ -215,18 +197,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        // check half of player is past left most edge
-        if Player.position.x <= 0 - Player.frame.width / 2{
-            gameOver()
-            for node in self.children {
-                node.removeAllActions()
+        if didTouchBoundries == false {
+            if Player.position.y <= 0 {
+                pauseAndRemoveNodes()
+                didTouchBoundries = true
             }
-            referenceTimer.invalidate()
+            else if Player.position.y >= self.frame.size.height {
+                pauseAndRemoveNodes()
+                didTouchBoundries = true
+            }
         }
     }
     
+    func pauseAndRemoveNodes() {
+        for node in self.children {
+            node.removeAllActions()
+        }
+        referenceTimer.invalidate()
+        buildExplosion(Player)
+    }
+    
     func pickReference() {
-        obstacleArray = ["Obstacle1", "Obstacle3"]
         let randomNumber = arc4random() % UInt32(obstacleArray.count)
         addReference(obstacleArray[Int(randomNumber)])
     }
@@ -235,7 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let reference = NSBundle.mainBundle().pathForResource(obstacleName, ofType: "sks")
         let referenceNode = SKReferenceNode(URL: NSURL(fileURLWithPath: reference!))
         
-        referenceNode.position = CGPoint(x: (self.scene?.size.width)!, y: 100)
+        referenceNode.position = CGPoint(x: (self.scene?.size.width)!, y: 0)
         self.addChild(referenceNode)
         
         // move the object
