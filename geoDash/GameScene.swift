@@ -17,7 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var isJumping = Bool()
     var isTouching = Bool()
     
-    let obstacleArray = ["Obstacle1", "Obstacle3"]
+    let obstacleArray = ["Obstacle1", "Obstacle2", "Obstacle3", "Obstacle4"]
     let lightColors = [UIColor.yellowColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.cyanColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.whiteColor(), UIColor.magentaColor()]
     
     var score = Int()
@@ -123,6 +123,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // get the particle file
         let explosion = SKEmitterNode(fileNamed: "Explosion.sks")
         explosion?.numParticlesToEmit = 200
+        
+        
         
         explosion?.runAction(SKAction.playSoundFileNamed("Explosion.wav", waitForCompletion: false))
         
