@@ -123,9 +123,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // get the particle file
         let explosion = SKEmitterNode(fileNamed: "Explosion.sks")
         explosion?.numParticlesToEmit = 200
-        
-        
-        
         explosion?.runAction(SKAction.playSoundFileNamed("Explosion.wav", waitForCompletion: false))
         
         // set position same as node to attach it to
@@ -138,6 +135,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func gameOver() {
         scoreTimer.invalidate()
+        // load up the scene again
+        let scene = OptionsScene(fileNamed: "OptionsScene")
+        let startLabel = scene?.childNodeWithName("startLabel") as! SKLabelNode
+        startLabel.text = "Restart"
+        // create a transition effect
+        let transition = SKTransition.crossFadeWithDuration(1.0)
+        // create a new view
+        let view = self.view as SKView!
+        // fill the whole screen
+        scene?.scaleMode = SKSceneScaleMode.AspectFill
+        // load scene onto view
+        view.presentScene(scene!, transition: transition)
+        
+        
+        /*
         let retryButton = SKSpriteNode(imageNamed: "retry")
         // when deterining touched node
         retryButton.name = "retryBtn"
@@ -147,7 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         retryButton.alpha = 0
         retryButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         self.addChild(retryButton)
-        retryButton.runAction(SKAction.sequence([waitDuration,fadeIn]))
+        retryButton.runAction(SKAction.sequence([waitDuration,fadeIn])) */
         
     }
     
