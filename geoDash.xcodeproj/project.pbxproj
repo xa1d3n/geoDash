@@ -12,6 +12,43 @@
 		A0064D431D3EA2E8007EF90F /* boxParticle.png in Resources */ = {isa = PBXBuildFile; fileRef = A0064D421D3EA2E8007EF90F /* boxParticle.png */; };
 		A0064D451D3EA6FF007EF90F /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0064D441D3EA6FF007EF90F /* Explosion.wav */; };
 		B335E2851D4D3FB600DEE6AD /* Obstacle3.sks in Resources */ = {isa = PBXBuildFile; fileRef = B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */; };
+		B3514FA91D5A9EA30098E6D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */; };
+		B3514FAB1D5A9EAB0098E6D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */; };
+		B3514FAD1D5A9EB30098E6D4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAC1D5A9EB30098E6D4 /* EventKit.framework */; };
+		B3514FAF1D5A9EB80098E6D4 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAE1D5A9EB80098E6D4 /* EventKitUI.framework */; };
+		B3514FB11D5A9EBE0098E6D4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FB01D5A9EBE0098E6D4 /* CoreData.framework */; };
+		B3514FB31D5A9EC50098E6D4 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FB21D5A9EC50098E6D4 /* CoreMedia.framework */; };
+		B3514FB51D5A9ECC0098E6D4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FB41D5A9ECC0098E6D4 /* MediaPlayer.framework */; };
+		B3514FB71D5A9ED20098E6D4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FB61D5A9ED20098E6D4 /* AdSupport.framework */; };
+		B3514FB91D5A9EDF0098E6D4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FB81D5A9EDF0098E6D4 /* StoreKit.framework */; };
+		B3514FBB1D5A9EE70098E6D4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FBA1D5A9EE60098E6D4 /* ImageIO.framework */; };
+		B3514FBE1D5A9F1D0098E6D4 /* geoDas-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = B3514FBD1D5A9F1D0098E6D4 /* geoDas-Bridging-Header.m */; };
+		B3514FF71D5A9F7A0098E6D4 /* branded-prize-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FD71D5A9F7A0098E6D4 /* branded-prize-large.png */; };
+		B3514FF81D5A9F7A0098E6D4 /* branded-prize-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FD81D5A9F7A0098E6D4 /* branded-prize-medium.png */; };
+		B3514FF91D5A9F7A0098E6D4 /* branded-prize-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FD91D5A9F7A0098E6D4 /* branded-prize-small.png */; };
+		B3514FFA1D5A9F7A0098E6D4 /* branded-prize-3d-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FDB1D5A9F7A0098E6D4 /* branded-prize-3d-large.png */; };
+		B3514FFB1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FDC1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png */; };
+		B3514FFC1D5A9F7A0098E6D4 /* branded-prize-3d-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FDD1D5A9F7A0098E6D4 /* branded-prize-3d-small.png */; };
+		B3514FFD1D5A9F7A0098E6D4 /* branded-prize-button-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FDF1D5A9F7A0098E6D4 /* branded-prize-button-large.png */; };
+		B3514FFE1D5A9F7A0098E6D4 /* branded-prize-button-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE01D5A9F7A0098E6D4 /* branded-prize-button-medium.png */; };
+		B3514FFF1D5A9F7A0098E6D4 /* branded-prize-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE11D5A9F7A0098E6D4 /* branded-prize-button-small.png */; };
+		B35150001D5A9F7A0098E6D4 /* m-button-circle-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE31D5A9F7A0098E6D4 /* m-button-circle-large.png */; };
+		B35150011D5A9F7A0098E6D4 /* m-button-circle-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE41D5A9F7A0098E6D4 /* m-button-circle-medium.png */; };
+		B35150021D5A9F7A0098E6D4 /* m-button-circle-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE51D5A9F7A0098E6D4 /* m-button-circle-small.png */; };
+		B35150031D5A9F7A0098E6D4 /* m-button-rectangle-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE71D5A9F7A0098E6D4 /* m-button-rectangle-large.png */; };
+		B35150041D5A9F7A0098E6D4 /* m-button-rectangle-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE81D5A9F7A0098E6D4 /* m-button-rectangle-medium.png */; };
+		B35150051D5A9F7A0098E6D4 /* m-button-rectangle-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FE91D5A9F7A0098E6D4 /* m-button-rectangle-small.png */; };
+		B35150061D5A9F7A0098E6D4 /* m-dropper-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FEB1D5A9F7A0098E6D4 /* m-dropper-large.png */; };
+		B35150071D5A9F7A0098E6D4 /* m-dropper-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FEC1D5A9F7A0098E6D4 /* m-dropper-medium.png */; };
+		B35150081D5A9F7A0098E6D4 /* m-dropper-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FED1D5A9F7A0098E6D4 /* m-dropper-small.png */; };
+		B35150091D5A9F7A0098E6D4 /* m-trophy-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FEF1D5A9F7A0098E6D4 /* m-trophy-large.png */; };
+		B351500A1D5A9F7A0098E6D4 /* m-trophy-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF01D5A9F7A0098E6D4 /* m-trophy-medium.png */; };
+		B351500B1D5A9F7A0098E6D4 /* m-trophy-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF11D5A9F7A0098E6D4 /* m-trophy-small.png */; };
+		B351500C1D5A9F7A0098E6D4 /* non-branded-large.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF31D5A9F7A0098E6D4 /* non-branded-large.png */; };
+		B351500D1D5A9F7A0098E6D4 /* non-branded-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF41D5A9F7A0098E6D4 /* non-branded-medium.png */; };
+		B351500E1D5A9F7A0098E6D4 /* non-branded-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF51D5A9F7A0098E6D4 /* non-branded-small.png */; };
+		B351500F1D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FF61D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a */; };
+		B35150121D5AA0230098E6D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35150111D5AA0230098E6D4 /* Constants.swift */; };
 		B35ED6411D53DF1D00999876 /* LeftPush.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6401D53DF1D00999876 /* LeftPush.sks */; };
 		B35ED6431D53DF7500999876 /* MagitTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6421D53DF7500999876 /* MagitTest.sks */; };
 		B35ED6461D53DF9F00999876 /* BokehTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6441D53DF9F00999876 /* BokehTest.sks */; };
@@ -38,6 +75,62 @@
 		A0064D441D3EA6FF007EF90F /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
 		B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle3.sks; sourceTree = "<group>"; };
 		B33BB43D1D49814E00E0254B /* FlappyFont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlappyFont.TTF; sourceTree = "<group>"; };
+		B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B3514FAC1D5A9EB30098E6D4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		B3514FAE1D5A9EB80098E6D4 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		B3514FB01D5A9EBE0098E6D4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B3514FB21D5A9EC50098E6D4 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B3514FB41D5A9ECC0098E6D4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B3514FB61D5A9ED20098E6D4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B3514FB81D5A9EDF0098E6D4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B3514FBA1D5A9EE60098E6D4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		B3514FBC1D5A9F1D0098E6D4 /* geoDash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "geoDash-Bridging-Header.h"; sourceTree = "<group>"; };
+		B3514FBD1D5A9F1D0098E6D4 /* geoDas-Bridging-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "geoDas-Bridging-Header.m"; sourceTree = "<group>"; };
+		B3514FC31D5A9F7A0098E6D4 /* SessionM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionM.h; sourceTree = "<group>"; };
+		B3514FC41D5A9F7A0098E6D4 /* SMAchievementData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAchievementData.h; sourceTree = "<group>"; };
+		B3514FC51D5A9F7A0098E6D4 /* SMActivityFeedViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMActivityFeedViewCell.h; sourceTree = "<group>"; };
+		B3514FC61D5A9F7A0098E6D4 /* SMActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMActivityFeedViewController.h; sourceTree = "<group>"; };
+		B3514FC71D5A9F7A0098E6D4 /* SMActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMActivityViewController.h; sourceTree = "<group>"; };
+		B3514FC81D5A9F7A0098E6D4 /* SMDefaultMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMDefaultMessageView.h; sourceTree = "<group>"; };
+		B3514FC91D5A9F7A0098E6D4 /* SMFeedMessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMFeedMessageData.h; sourceTree = "<group>"; };
+		B3514FCA1D5A9F7A0098E6D4 /* SMLoaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLoaderController.h; sourceTree = "<group>"; };
+		B3514FCB1D5A9F7A0098E6D4 /* SMLocationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLocationEvent.h; sourceTree = "<group>"; };
+		B3514FCC1D5A9F7A0098E6D4 /* SMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLocationManager.h; sourceTree = "<group>"; };
+		B3514FCD1D5A9F7A0098E6D4 /* SMMessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessageData.h; sourceTree = "<group>"; };
+		B3514FCE1D5A9F7A0098E6D4 /* SMMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessageView.h; sourceTree = "<group>"; };
+		B3514FCF1D5A9F7A0098E6D4 /* SMNotificationMessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNotificationMessageData.h; sourceTree = "<group>"; };
+		B3514FD01D5A9F7A0098E6D4 /* SMOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMOrder.h; sourceTree = "<group>"; };
+		B3514FD11D5A9F7A0098E6D4 /* SMPortalBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPortalBarButtonItem.h; sourceTree = "<group>"; };
+		B3514FD21D5A9F7A0098E6D4 /* SMPortalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPortalButton.h; sourceTree = "<group>"; };
+		B3514FD31D5A9F7A0098E6D4 /* SMReceipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMReceipt.h; sourceTree = "<group>"; };
+		B3514FD41D5A9F7A0098E6D4 /* SMReceiptUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMReceiptUploadViewController.h; sourceTree = "<group>"; };
+		B3514FD71D5A9F7A0098E6D4 /* branded-prize-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-large.png"; sourceTree = "<group>"; };
+		B3514FD81D5A9F7A0098E6D4 /* branded-prize-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-medium.png"; sourceTree = "<group>"; };
+		B3514FD91D5A9F7A0098E6D4 /* branded-prize-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-small.png"; sourceTree = "<group>"; };
+		B3514FDB1D5A9F7A0098E6D4 /* branded-prize-3d-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-3d-large.png"; sourceTree = "<group>"; };
+		B3514FDC1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-3d-medium.png"; sourceTree = "<group>"; };
+		B3514FDD1D5A9F7A0098E6D4 /* branded-prize-3d-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-3d-small.png"; sourceTree = "<group>"; };
+		B3514FDF1D5A9F7A0098E6D4 /* branded-prize-button-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-button-large.png"; sourceTree = "<group>"; };
+		B3514FE01D5A9F7A0098E6D4 /* branded-prize-button-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-button-medium.png"; sourceTree = "<group>"; };
+		B3514FE11D5A9F7A0098E6D4 /* branded-prize-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "branded-prize-button-small.png"; sourceTree = "<group>"; };
+		B3514FE31D5A9F7A0098E6D4 /* m-button-circle-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-circle-large.png"; sourceTree = "<group>"; };
+		B3514FE41D5A9F7A0098E6D4 /* m-button-circle-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-circle-medium.png"; sourceTree = "<group>"; };
+		B3514FE51D5A9F7A0098E6D4 /* m-button-circle-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-circle-small.png"; sourceTree = "<group>"; };
+		B3514FE71D5A9F7A0098E6D4 /* m-button-rectangle-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-rectangle-large.png"; sourceTree = "<group>"; };
+		B3514FE81D5A9F7A0098E6D4 /* m-button-rectangle-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-rectangle-medium.png"; sourceTree = "<group>"; };
+		B3514FE91D5A9F7A0098E6D4 /* m-button-rectangle-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-button-rectangle-small.png"; sourceTree = "<group>"; };
+		B3514FEB1D5A9F7A0098E6D4 /* m-dropper-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-dropper-large.png"; sourceTree = "<group>"; };
+		B3514FEC1D5A9F7A0098E6D4 /* m-dropper-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-dropper-medium.png"; sourceTree = "<group>"; };
+		B3514FED1D5A9F7A0098E6D4 /* m-dropper-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-dropper-small.png"; sourceTree = "<group>"; };
+		B3514FEF1D5A9F7A0098E6D4 /* m-trophy-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-trophy-large.png"; sourceTree = "<group>"; };
+		B3514FF01D5A9F7A0098E6D4 /* m-trophy-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-trophy-medium.png"; sourceTree = "<group>"; };
+		B3514FF11D5A9F7A0098E6D4 /* m-trophy-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "m-trophy-small.png"; sourceTree = "<group>"; };
+		B3514FF31D5A9F7A0098E6D4 /* non-branded-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-large.png"; sourceTree = "<group>"; };
+		B3514FF41D5A9F7A0098E6D4 /* non-branded-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-medium.png"; sourceTree = "<group>"; };
+		B3514FF51D5A9F7A0098E6D4 /* non-branded-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-small.png"; sourceTree = "<group>"; };
+		B3514FF61D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSessionMLocation.1.15.7.a; sourceTree = "<group>"; };
+		B35150111D5AA0230098E6D4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B35ED6401D53DF1D00999876 /* LeftPush.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftPush.sks; sourceTree = "<group>"; };
 		B35ED6421D53DF7500999876 /* MagitTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagitTest.sks; sourceTree = "<group>"; };
 		B35ED6441D53DF9F00999876 /* BokehTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BokehTest.sks; sourceTree = "<group>"; };
@@ -64,6 +157,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3514FBB1D5A9EE70098E6D4 /* ImageIO.framework in Frameworks */,
+				B3514FB91D5A9EDF0098E6D4 /* StoreKit.framework in Frameworks */,
+				B3514FB71D5A9ED20098E6D4 /* AdSupport.framework in Frameworks */,
+				B3514FB51D5A9ECC0098E6D4 /* MediaPlayer.framework in Frameworks */,
+				B3514FB31D5A9EC50098E6D4 /* CoreMedia.framework in Frameworks */,
+				B3514FB11D5A9EBE0098E6D4 /* CoreData.framework in Frameworks */,
+				B351500F1D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a in Frameworks */,
+				B3514FAF1D5A9EB80098E6D4 /* EventKitUI.framework in Frameworks */,
+				B3514FAD1D5A9EB30098E6D4 /* EventKit.framework in Frameworks */,
+				B3514FAB1D5A9EAB0098E6D4 /* AVFoundation.framework in Frameworks */,
+				B3514FA91D5A9EA30098E6D4 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +199,158 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		B3514FC11D5A9F7A0098E6D4 /* SessionMLocation-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FC21D5A9F7A0098E6D4 /* API */,
+				B3514FD51D5A9F7A0098E6D4 /* Assets */,
+				B3514FF61D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a */,
+			);
+			path = "SessionMLocation-SDK";
+			sourceTree = "<group>";
+		};
+		B3514FC21D5A9F7A0098E6D4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FC31D5A9F7A0098E6D4 /* SessionM.h */,
+				B3514FC41D5A9F7A0098E6D4 /* SMAchievementData.h */,
+				B3514FC51D5A9F7A0098E6D4 /* SMActivityFeedViewCell.h */,
+				B3514FC61D5A9F7A0098E6D4 /* SMActivityFeedViewController.h */,
+				B3514FC71D5A9F7A0098E6D4 /* SMActivityViewController.h */,
+				B3514FC81D5A9F7A0098E6D4 /* SMDefaultMessageView.h */,
+				B3514FC91D5A9F7A0098E6D4 /* SMFeedMessageData.h */,
+				B3514FCA1D5A9F7A0098E6D4 /* SMLoaderController.h */,
+				B3514FCB1D5A9F7A0098E6D4 /* SMLocationEvent.h */,
+				B3514FCC1D5A9F7A0098E6D4 /* SMLocationManager.h */,
+				B3514FCD1D5A9F7A0098E6D4 /* SMMessageData.h */,
+				B3514FCE1D5A9F7A0098E6D4 /* SMMessageView.h */,
+				B3514FCF1D5A9F7A0098E6D4 /* SMNotificationMessageData.h */,
+				B3514FD01D5A9F7A0098E6D4 /* SMOrder.h */,
+				B3514FD11D5A9F7A0098E6D4 /* SMPortalBarButtonItem.h */,
+				B3514FD21D5A9F7A0098E6D4 /* SMPortalButton.h */,
+				B3514FD31D5A9F7A0098E6D4 /* SMReceipt.h */,
+				B3514FD41D5A9F7A0098E6D4 /* SMReceiptUploadViewController.h */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B3514FD51D5A9F7A0098E6D4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FD61D5A9F7A0098E6D4 /* branded-prize */,
+				B3514FDA1D5A9F7A0098E6D4 /* branded-prize-3d */,
+				B3514FDE1D5A9F7A0098E6D4 /* branded-prize-button */,
+				B3514FE21D5A9F7A0098E6D4 /* m-button-circle */,
+				B3514FE61D5A9F7A0098E6D4 /* m-button-rectangle */,
+				B3514FEA1D5A9F7A0098E6D4 /* m-dropper */,
+				B3514FEE1D5A9F7A0098E6D4 /* m-trophy */,
+				B3514FF21D5A9F7A0098E6D4 /* non-branded-prize */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B3514FD61D5A9F7A0098E6D4 /* branded-prize */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FD71D5A9F7A0098E6D4 /* branded-prize-large.png */,
+				B3514FD81D5A9F7A0098E6D4 /* branded-prize-medium.png */,
+				B3514FD91D5A9F7A0098E6D4 /* branded-prize-small.png */,
+			);
+			path = "branded-prize";
+			sourceTree = "<group>";
+		};
+		B3514FDA1D5A9F7A0098E6D4 /* branded-prize-3d */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FDB1D5A9F7A0098E6D4 /* branded-prize-3d-large.png */,
+				B3514FDC1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png */,
+				B3514FDD1D5A9F7A0098E6D4 /* branded-prize-3d-small.png */,
+			);
+			path = "branded-prize-3d";
+			sourceTree = "<group>";
+		};
+		B3514FDE1D5A9F7A0098E6D4 /* branded-prize-button */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FDF1D5A9F7A0098E6D4 /* branded-prize-button-large.png */,
+				B3514FE01D5A9F7A0098E6D4 /* branded-prize-button-medium.png */,
+				B3514FE11D5A9F7A0098E6D4 /* branded-prize-button-small.png */,
+			);
+			path = "branded-prize-button";
+			sourceTree = "<group>";
+		};
+		B3514FE21D5A9F7A0098E6D4 /* m-button-circle */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FE31D5A9F7A0098E6D4 /* m-button-circle-large.png */,
+				B3514FE41D5A9F7A0098E6D4 /* m-button-circle-medium.png */,
+				B3514FE51D5A9F7A0098E6D4 /* m-button-circle-small.png */,
+			);
+			path = "m-button-circle";
+			sourceTree = "<group>";
+		};
+		B3514FE61D5A9F7A0098E6D4 /* m-button-rectangle */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FE71D5A9F7A0098E6D4 /* m-button-rectangle-large.png */,
+				B3514FE81D5A9F7A0098E6D4 /* m-button-rectangle-medium.png */,
+				B3514FE91D5A9F7A0098E6D4 /* m-button-rectangle-small.png */,
+			);
+			path = "m-button-rectangle";
+			sourceTree = "<group>";
+		};
+		B3514FEA1D5A9F7A0098E6D4 /* m-dropper */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FEB1D5A9F7A0098E6D4 /* m-dropper-large.png */,
+				B3514FEC1D5A9F7A0098E6D4 /* m-dropper-medium.png */,
+				B3514FED1D5A9F7A0098E6D4 /* m-dropper-small.png */,
+			);
+			path = "m-dropper";
+			sourceTree = "<group>";
+		};
+		B3514FEE1D5A9F7A0098E6D4 /* m-trophy */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FEF1D5A9F7A0098E6D4 /* m-trophy-large.png */,
+				B3514FF01D5A9F7A0098E6D4 /* m-trophy-medium.png */,
+				B3514FF11D5A9F7A0098E6D4 /* m-trophy-small.png */,
+			);
+			path = "m-trophy";
+			sourceTree = "<group>";
+		};
+		B3514FF21D5A9F7A0098E6D4 /* non-branded-prize */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FF31D5A9F7A0098E6D4 /* non-branded-large.png */,
+				B3514FF41D5A9F7A0098E6D4 /* non-branded-medium.png */,
+				B3514FF51D5A9F7A0098E6D4 /* non-branded-small.png */,
+			);
+			path = "non-branded-prize";
+			sourceTree = "<group>";
+		};
+		B35150101D5A9F980098E6D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3514FC11D5A9F7A0098E6D4 /* SessionMLocation-SDK */,
+				B3514FBA1D5A9EE60098E6D4 /* ImageIO.framework */,
+				B3514FB81D5A9EDF0098E6D4 /* StoreKit.framework */,
+				B3514FB61D5A9ED20098E6D4 /* AdSupport.framework */,
+				B3514FB41D5A9ECC0098E6D4 /* MediaPlayer.framework */,
+				B3514FB21D5A9EC50098E6D4 /* CoreMedia.framework */,
+				B3514FB01D5A9EBE0098E6D4 /* CoreData.framework */,
+				B3514FAE1D5A9EB80098E6D4 /* EventKitUI.framework */,
+				B3514FAC1D5A9EB30098E6D4 /* EventKit.framework */,
+				B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */,
+				B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3CC3A131D37270200C51406 = {
 			isa = PBXGroup;
 			children = (
+				B35150101D5A9F980098E6D4 /* Frameworks */,
 				B3CC3A1E1D37270300C51406 /* geoDash */,
 				B3CC3A1D1D37270300C51406 /* Products */,
 			);
@@ -117,6 +370,7 @@
 				B335E2861D4D497E00DEE6AD /* Resources */,
 				B3282BAB1D4D302000BDA39B /* Scenes */,
 				B3CC3A1F1D37270300C51406 /* AppDelegate.swift */,
+				B35150111D5AA0230098E6D4 /* Constants.swift */,
 				B3CC3A231D37270300C51406 /* GameScene.swift */,
 				B39C8BAA1D567DF300F2ABC1 /* OptionsScene.swift */,
 				B35ED6401D53DF1D00999876 /* LeftPush.sks */,
@@ -129,6 +383,8 @@
 				B3CC3A2A1D37270300C51406 /* Assets.xcassets */,
 				B3CC3A2C1D37270300C51406 /* LaunchScreen.storyboard */,
 				B3CC3A2F1D37270300C51406 /* Info.plist */,
+				B3514FBD1D5A9F1D0098E6D4 /* geoDas-Bridging-Header.m */,
+				B3514FBC1D5A9F1D0098E6D4 /* geoDash-Bridging-Header.h */,
 			);
 			path = geoDash;
 			sourceTree = "<group>";
@@ -192,20 +448,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				B35ED6461D53DF9F00999876 /* BokehTest.sks in Resources */,
+				B351500B1D5A9F7A0098E6D4 /* m-trophy-small.png in Resources */,
+				B35150001D5A9F7A0098E6D4 /* m-button-circle-large.png in Resources */,
+				B35150081D5A9F7A0098E6D4 /* m-dropper-small.png in Resources */,
+				B351500E1D5A9F7A0098E6D4 /* non-branded-small.png in Resources */,
 				B3CC3A221D37270300C51406 /* GameScene.sks in Resources */,
+				B35150031D5A9F7A0098E6D4 /* m-button-rectangle-large.png in Resources */,
 				B3CC3A2E1D37270300C51406 /* LaunchScreen.storyboard in Resources */,
 				B39C8BA91D567A2800F2ABC1 /* OptionsScene.sks in Resources */,
+				B351500C1D5A9F7A0098E6D4 /* non-branded-large.png in Resources */,
 				B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */,
 				A0064D411D3EA0E5007EF90F /* spark.png in Resources */,
 				B35ED6491D53DFFF00999876 /* RainTest.sks in Resources */,
+				B3514FF91D5A9F7A0098E6D4 /* branded-prize-small.png in Resources */,
+				B3514FFE1D5A9F7A0098E6D4 /* branded-prize-button-medium.png in Resources */,
 				B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */,
 				B35ED6411D53DF1D00999876 /* LeftPush.sks in Resources */,
+				B351500D1D5A9F7A0098E6D4 /* non-branded-medium.png in Resources */,
+				B3514FFA1D5A9F7A0098E6D4 /* branded-prize-3d-large.png in Resources */,
+				B3514FFB1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png in Resources */,
+				B351500A1D5A9F7A0098E6D4 /* m-trophy-medium.png in Resources */,
 				B335E2851D4D3FB600DEE6AD /* Obstacle3.sks in Resources */,
+				B3514FF71D5A9F7A0098E6D4 /* branded-prize-large.png in Resources */,
+				B3514FFF1D5A9F7A0098E6D4 /* branded-prize-button-small.png in Resources */,
+				B3514FFC1D5A9F7A0098E6D4 /* branded-prize-3d-small.png in Resources */,
+				B35150091D5A9F7A0098E6D4 /* m-trophy-large.png in Resources */,
 				B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */,
+				B35150021D5A9F7A0098E6D4 /* m-button-circle-small.png in Resources */,
+				B35150051D5A9F7A0098E6D4 /* m-button-rectangle-small.png in Resources */,
 				A0064D451D3EA6FF007EF90F /* Explosion.wav in Resources */,
+				B35150041D5A9F7A0098E6D4 /* m-button-rectangle-medium.png in Resources */,
+				B35150071D5A9F7A0098E6D4 /* m-dropper-medium.png in Resources */,
 				B3CC3A291D37270300C51406 /* Main.storyboard in Resources */,
+				B3514FFD1D5A9F7A0098E6D4 /* branded-prize-button-large.png in Resources */,
+				B35150061D5A9F7A0098E6D4 /* m-dropper-large.png in Resources */,
 				B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */,
+				B35150011D5A9F7A0098E6D4 /* m-button-circle-medium.png in Resources */,
 				A0064D401D3EA0E5007EF90F /* Explosion.sks in Resources */,
+				B3514FF81D5A9F7A0098E6D4 /* branded-prize-medium.png in Resources */,
 				B35ED6471D53DF9F00999876 /* bokeh.png in Resources */,
 				B35ED6431D53DF7500999876 /* MagitTest.sks in Resources */,
 				A0064D431D3EA2E8007EF90F /* boxParticle.png in Resources */,
@@ -223,6 +503,8 @@
 				B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */,
 				B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */,
 				B39C8BAB1D567DF300F2ABC1 /* OptionsScene.swift in Sources */,
+				B3514FBE1D5A9F1D0098E6D4 /* geoDas-Bridging-Header.m in Sources */,
+				B35150121D5AA0230098E6D4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,10 +617,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = geoDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SessionMLocation-SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -347,10 +636,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = geoDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SessionMLocation-SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

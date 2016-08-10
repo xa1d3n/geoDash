@@ -130,7 +130,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // remove the affected node
         spriteToExplode.removeFromParent()
         addChild(explosion!)
-        gameOver()
+        
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+            self.gameOver()
+        })
     }
     
     func gameOver() {
@@ -140,7 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let startLabel = scene?.childNodeWithName("startLabel") as! SKLabelNode
         startLabel.text = "Restart"
         // create a transition effect
-        let transition = SKTransition.crossFadeWithDuration(1.0)
+        let transition = SKTransition.crossFadeWithDuration(0.5)
         // create a new view
         let view = self.view as SKView!
         // fill the whole screen
