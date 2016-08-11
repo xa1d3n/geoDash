@@ -49,19 +49,16 @@
 		B351500E1D5A9F7A0098E6D4 /* non-branded-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B3514FF51D5A9F7A0098E6D4 /* non-branded-small.png */; };
 		B351500F1D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FF61D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a */; };
 		B35150121D5AA0230098E6D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35150111D5AA0230098E6D4 /* Constants.swift */; };
-		B35ED6411D53DF1D00999876 /* LeftPush.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6401D53DF1D00999876 /* LeftPush.sks */; };
 		B35ED6431D53DF7500999876 /* MagitTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6421D53DF7500999876 /* MagitTest.sks */; };
-		B35ED6461D53DF9F00999876 /* BokehTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6441D53DF9F00999876 /* BokehTest.sks */; };
 		B35ED6471D53DF9F00999876 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6451D53DF9F00999876 /* bokeh.png */; };
-		B35ED6491D53DFFF00999876 /* RainTest.sks in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6481D53DFFF00999876 /* RainTest.sks */; };
 		B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */ = {isa = PBXBuildFile; fileRef = B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */; };
+		B39A416D1D5BFF8600A7BBFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
 		B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */; };
 		B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */; };
 		B39C8BA91D567A2800F2ABC1 /* OptionsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */; };
 		B39C8BAB1D567DF300F2ABC1 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C8BAA1D567DF300F2ABC1 /* OptionsScene.swift */; };
 		B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A1F1D37270300C51406 /* AppDelegate.swift */; };
 		B3CC3A221D37270300C51406 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A211D37270300C51406 /* GameScene.sks */; };
-		B3CC3A241D37270300C51406 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
 		B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A251D37270300C51406 /* GameViewController.swift */; };
 		B3CC3A291D37270300C51406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A271D37270300C51406 /* Main.storyboard */; };
 		B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A2A1D37270300C51406 /* Assets.xcassets */; };
@@ -131,11 +128,8 @@
 		B3514FF51D5A9F7A0098E6D4 /* non-branded-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-small.png"; sourceTree = "<group>"; };
 		B3514FF61D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSessionMLocation.1.15.7.a; sourceTree = "<group>"; };
 		B35150111D5AA0230098E6D4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B35ED6401D53DF1D00999876 /* LeftPush.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LeftPush.sks; sourceTree = "<group>"; };
 		B35ED6421D53DF7500999876 /* MagitTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagitTest.sks; sourceTree = "<group>"; };
-		B35ED6441D53DF9F00999876 /* BokehTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BokehTest.sks; sourceTree = "<group>"; };
 		B35ED6451D53DF9F00999876 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
-		B35ED6481D53DFFF00999876 /* RainTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainTest.sks; sourceTree = "<group>"; };
 		B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Obstacle1.sks; path = ../Obstacle1.sks; sourceTree = "<group>"; };
 		B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle2.sks; sourceTree = "<group>"; };
 		B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle4.sks; sourceTree = "<group>"; };
@@ -195,6 +189,8 @@
 				A0064D421D3EA2E8007EF90F /* boxParticle.png */,
 				A0064D441D3EA6FF007EF90F /* Explosion.wav */,
 				B33BB43D1D49814E00E0254B /* FlappyFont.TTF */,
+				B35ED6421D53DF7500999876 /* MagitTest.sks */,
+				B35ED6451D53DF9F00999876 /* bokeh.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -373,11 +369,6 @@
 				B35150111D5AA0230098E6D4 /* Constants.swift */,
 				B3CC3A231D37270300C51406 /* GameScene.swift */,
 				B39C8BAA1D567DF300F2ABC1 /* OptionsScene.swift */,
-				B35ED6401D53DF1D00999876 /* LeftPush.sks */,
-				B35ED6421D53DF7500999876 /* MagitTest.sks */,
-				B35ED6481D53DFFF00999876 /* RainTest.sks */,
-				B35ED6441D53DF9F00999876 /* BokehTest.sks */,
-				B35ED6451D53DF9F00999876 /* bokeh.png */,
 				B3CC3A251D37270300C51406 /* GameViewController.swift */,
 				B3CC3A271D37270300C51406 /* Main.storyboard */,
 				B3CC3A2A1D37270300C51406 /* Assets.xcassets */,
@@ -447,7 +438,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B35ED6461D53DF9F00999876 /* BokehTest.sks in Resources */,
 				B351500B1D5A9F7A0098E6D4 /* m-trophy-small.png in Resources */,
 				B35150001D5A9F7A0098E6D4 /* m-button-circle-large.png in Resources */,
 				B35150081D5A9F7A0098E6D4 /* m-dropper-small.png in Resources */,
@@ -459,11 +449,9 @@
 				B351500C1D5A9F7A0098E6D4 /* non-branded-large.png in Resources */,
 				B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */,
 				A0064D411D3EA0E5007EF90F /* spark.png in Resources */,
-				B35ED6491D53DFFF00999876 /* RainTest.sks in Resources */,
 				B3514FF91D5A9F7A0098E6D4 /* branded-prize-small.png in Resources */,
 				B3514FFE1D5A9F7A0098E6D4 /* branded-prize-button-medium.png in Resources */,
 				B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */,
-				B35ED6411D53DF1D00999876 /* LeftPush.sks in Resources */,
 				B351500D1D5A9F7A0098E6D4 /* non-branded-medium.png in Resources */,
 				B3514FFA1D5A9F7A0098E6D4 /* branded-prize-3d-large.png in Resources */,
 				B3514FFB1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png in Resources */,
@@ -499,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3CC3A241D37270300C51406 /* GameScene.swift in Sources */,
+				B39A416D1D5BFF8600A7BBFD /* GameScene.swift in Sources */,
 				B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */,
 				B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */,
 				B39C8BAB1D567DF300F2ABC1 /* OptionsScene.swift in Sources */,

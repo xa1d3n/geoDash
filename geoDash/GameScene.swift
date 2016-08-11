@@ -25,10 +25,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreTimer = NSTimer()
     var scoreLabel = SKLabelNode()
     var highScoreLabel = SKLabelNode()
-    
     var didTouchBoundries = false
+    var ogPlayerPositionX = CGFloat()
     
     override func didMoveToView(view: SKView) {
+        
         // update labels
         highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
         scoreLabel = scene?.childNodeWithName("ScoreLabel") as! SKLabelNode
@@ -54,10 +55,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         Player.physicsBody?.collisionBitMask = 1 | 3
         Player.physicsBody?.contactTestBitMask = 1 | 3
         Player.alpha = 0.1
+        ogPlayerPositionX = Player.position.x
         
         referenceTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(GameScene.pickReference), userInfo: nil, repeats: true)
         
         scoreTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GameScene.addScore), userInfo: nil, repeats: true)
+        
+        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(GameScene.swipedRight))
+        
+        swipeRight.direction = .Right
+        view.addGestureRecognizer(swipeRight)
+    }
+    
+    // teleport player. Turn off collision
+    func swipedRight(sender:UISwipeGestureRecognizer){
+        // Player.physicsBody?.categoryBitMask = 999999
+        Player.physicsBody?.dynamic = false
+        
+        let effect = SKEmitterNode(fileNamed: "MagitTest.sks")
+        let light = Player.childNodeWithName("light") as! SKLightNode
+        if Player.position.x == ogPlayerPositionX {
+            effect?.particleColor = light.lightColor
+            effect?.position = Player.position
+            addChild(effect!)
+        }
+        
+        Player.position.x = Player.position.x + 450
+        
+        if sender.state == .Ended {
+            Player.physicsBody?.dynamic = true
+            
+            // move to original x position
+            if Player.position.x != ogPlayerPositionX {
+                let action = SKAction.moveToX(ogPlayerPositionX, duration: 1.5)
+                let fadeAction = SKAction.fadeOutWithDuration(1.5)
+                effect?.runAction(fadeAction, completion: { 
+                    effect?.removeFromParent()
+                })
+                Player.runAction(action)
+            }
+        }
     }
     
     func addScore() {
@@ -91,10 +128,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func jump() {
         // only jump if not currently jumping and if player touches screen
         if isTouching == true {
-
-                Player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -200))
-                isJumping = true
-
+            
+            Player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -200))
+            isJumping = true
         }
     }
     
@@ -109,8 +145,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else if bodyA?.physicsBody?.categoryBitMask == 3 && bodyB?.physicsBody?.categoryBitMask == 2 {
             pauseAndRemoveNodes()
         }
-        
-        // detect player & enemy contact
+            
+            // detect player & enemy contact
         else if bodyA?.physicsBody?.categoryBitMask == 2 && bodyB?.physicsBody?.categoryBitMask == 4 {
             pauseAndRemoveNodes()
         }
@@ -141,9 +177,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreTimer.invalidate()
         // load up the scene again
         let scene = OptionsScene(fileNamed: "OptionsScene")
-        let startLabel = scene?.childNodeWithName("startLabel") as! SKLabelNode
-        startLabel.text = "Restart"
-        // create a transition effect
         let transition = SKTransition.crossFadeWithDuration(0.5)
         // create a new view
         let view = self.view as SKView!
@@ -151,19 +184,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scene?.scaleMode = SKSceneScaleMode.AspectFill
         // load scene onto view
         view.presentScene(scene!, transition: transition)
-        
-        
-        /*
-        let retryButton = SKSpriteNode(imageNamed: "retry")
-        // when deterining touched node
-        retryButton.name = "retryBtn"
-        // wait 1 second before showing the retry
-        let waitDuration = SKAction.waitForDuration(1.0)
-        let fadeIn = SKAction.fadeInWithDuration(0.3)
-        retryButton.alpha = 0
-        retryButton.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
-        self.addChild(retryButton)
-        retryButton.runAction(SKAction.sequence([waitDuration,fadeIn])) */
         
     }
     
@@ -186,10 +206,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let currfalloff = light.falloff
         let newFalloff = currfalloff + 1
         light.falloff = newFalloff
-       
+        
         
         jump()
     }
+    
+    
     
     func restartScene() {
         // load up the scene again
@@ -207,13 +229,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         _ = Player.childNodeWithName("light") as! SKLightNode
-       // light.falloff = 3
+        // light.falloff = 3
         isTouching = false
         
         
-        
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         if didTouchBoundries == false {
             if Player.position.y <= 0 {
