@@ -7,8 +7,9 @@
 //
 
 import SpriteKit
+import GameKit
 
-class OptionsScene: SKScene {
+class OptionsScene: SKScene, GKGameCenterControllerDelegate {
     
     var score = Int()
     var highScore = Int()
@@ -26,6 +27,7 @@ class OptionsScene: SKScene {
     var shareBtn = SKShapeNode()
     
     override func didMoveToView(view: SKView) {
+        authPlayer()
         animateTapLabel()
         
         createButtons()
@@ -54,6 +56,26 @@ class OptionsScene: SKScene {
         Player.alpha = 0.1
     }
     
+    // dismiss game center
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // authenticate user with game center
+    func authPlayer() {
+        let localPlayer = GKLocalPlayer.localPlayer()
+        
+        localPlayer.authenticateHandler = {
+            (view, error) in
+            
+            if view != nil {
+                
+            } else {
+                // print(GKLocalPlayer.localPlayer().authenticated)
+            }
+        }
+    }
+    
     func createButtons() {
         let backColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
         
@@ -76,7 +98,9 @@ class OptionsScene: SKScene {
         shareBtn.runAction(runForever)
         
         let leaderBoard = SKShapeNode(circleOfRadius: 100)
+        leaderBoard.name = "leaderBoard"
         let leaderIcon = SKSpriteNode(imageNamed: "leaderBoard")
+        leaderIcon.name = "leaderBoard"
         leaderBoard.fillColor = backColor
         leaderBoard.strokeColor = backColor
         leaderBoard.position = CGPoint(x: 830, y: 240)
@@ -84,7 +108,9 @@ class OptionsScene: SKScene {
         addChild(leaderBoard)
         
         rate = SKShapeNode(circleOfRadius: 100)
+        rate.name = "rate"
         let rateIcon = SKSpriteNode(imageNamed: "star")
+        rateIcon.name = "rate"
         rate.fillColor = backColor
         rate.strokeColor = backColor
         rate.position = CGPoint(x: 1160, y: 240)
@@ -173,8 +199,23 @@ class OptionsScene: SKScene {
                 let controller = SMActivityViewController()
                 self.appDelegate.window?.rootViewController?.presentViewController(controller, animated: true, completion: nil)
             }
+            else if (node.name == "leaderBoard") {
+                showLeaderBoard()
+            }
+            else if (node.name == "rate") {
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/square-lights/id1143377277?ls=1&mt=8")!)
+            }
 
         }
+    }
+    
+    // open game center leaderboard
+    func showLeaderBoard() {
+        let vc = self.view?.window?.rootViewController
+        let gcVc = GKGameCenterViewController()
+        
+        gcVc.gameCenterDelegate = self
+        vc?.presentViewController(gcVc, animated: true, completion: nil)
     }
     
     func share() {
@@ -190,7 +231,6 @@ class OptionsScene: SKScene {
             }
         }
     }
-    
     
     func restartScene() {
         // load up the scene again

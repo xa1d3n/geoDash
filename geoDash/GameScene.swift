@@ -7,8 +7,9 @@
 //
 
 import SpriteKit
+import GameKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelegate {
     
     var referenceTimer = NSTimer()
     
@@ -114,10 +115,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             light.falloff = newFalloff
         }
         
-        
-        
         if score > highScore {
             highScore = score
+            
+            // save score to game center
+            if GKLocalPlayer.localPlayer().authenticated {
+                let scoreReporter = GKScore(leaderboardIdentifier: "SquareLightning")
+                
+                scoreReporter.value = Int64(highScore)
+                let scoreArray : [GKScore] = [scoreReporter]
+                GKScore.reportScores(scoreArray, withCompletionHandler: nil)
+            }
+            
             highScoreLabel.text = "Highscore : \(highScore)"
             let userDefaults = NSUserDefaults.standardUserDefaults()
             // set new high score
@@ -275,5 +284,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // animate the node
         referenceNode.runAction(SKAction.sequence([moveAction, destroyAction]))
+    }
+    
+    // dismiss game center
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
 }

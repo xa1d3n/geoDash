@@ -53,6 +53,9 @@
 		B35ED6471D53DF9F00999876 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = B35ED6451D53DF9F00999876 /* bokeh.png */; };
 		B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */ = {isa = PBXBuildFile; fileRef = B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */; };
 		B39A416D1D5BFF8600A7BBFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
+		B39A416F1D5D70D500A7BBFD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39A416E1D5D70D500A7BBFD /* GameKit.framework */; };
+		B39A41711D5D79E400A7BBFD /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */; };
+		B39A41731D5D7A4E00A7BBFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */; };
 		B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */; };
 		B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */; };
 		B39C8BA91D567A2800F2ABC1 /* OptionsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */; };
@@ -131,6 +134,9 @@
 		B35ED6421D53DF7500999876 /* MagitTest.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagitTest.sks; sourceTree = "<group>"; };
 		B35ED6451D53DF9F00999876 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 		B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Obstacle1.sks; path = ../Obstacle1.sks; sourceTree = "<group>"; };
+		B39A416E1D5D70D500A7BBFD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle2.sks; sourceTree = "<group>"; };
 		B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle4.sks; sourceTree = "<group>"; };
 		B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsScene.sks; sourceTree = "<group>"; };
@@ -153,7 +159,9 @@
 			files = (
 				B3514FBB1D5A9EE70098E6D4 /* ImageIO.framework in Frameworks */,
 				B3514FB91D5A9EDF0098E6D4 /* StoreKit.framework in Frameworks */,
+				B39A41711D5D79E400A7BBFD /* GoogleMobileAds.framework in Frameworks */,
 				B3514FB71D5A9ED20098E6D4 /* AdSupport.framework in Frameworks */,
+				B39A416F1D5D70D500A7BBFD /* GameKit.framework in Frameworks */,
 				B3514FB51D5A9ECC0098E6D4 /* MediaPlayer.framework in Frameworks */,
 				B3514FB31D5A9EC50098E6D4 /* CoreMedia.framework in Frameworks */,
 				B3514FB11D5A9EBE0098E6D4 /* CoreData.framework in Frameworks */,
@@ -328,6 +336,8 @@
 		B35150101D5A9F980098E6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */,
+				B39A416E1D5D70D500A7BBFD /* GameKit.framework */,
 				B3514FC11D5A9F7A0098E6D4 /* SessionMLocation-SDK */,
 				B3514FBA1D5A9EE60098E6D4 /* ImageIO.framework */,
 				B3514FB81D5A9EDF0098E6D4 /* StoreKit.framework */,
@@ -363,6 +373,7 @@
 		B3CC3A1E1D37270300C51406 /* geoDash */ = {
 			isa = PBXGroup;
 			children = (
+				B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */,
 				B335E2861D4D497E00DEE6AD /* Resources */,
 				B3282BAB1D4D302000BDA39B /* Scenes */,
 				B3CC3A1F1D37270300C51406 /* AppDelegate.swift */,
@@ -412,6 +423,12 @@
 				TargetAttributes = {
 					B3CC3A1B1D37270300C51406 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = AS4JYR527U;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -455,6 +472,7 @@
 				B351500D1D5A9F7A0098E6D4 /* non-branded-medium.png in Resources */,
 				B3514FFA1D5A9F7A0098E6D4 /* branded-prize-3d-large.png in Resources */,
 				B3514FFB1D5A9F7A0098E6D4 /* branded-prize-3d-medium.png in Resources */,
+				B39A41731D5D7A4E00A7BBFD /* GoogleService-Info.plist in Resources */,
 				B351500A1D5A9F7A0098E6D4 /* m-trophy-medium.png in Resources */,
 				B335E2851D4D3FB600DEE6AD /* Obstacle3.sks in Resources */,
 				B3514FF71D5A9F7A0098E6D4 /* branded-prize-large.png in Resources */,
@@ -606,13 +624,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = geoDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SessionMLocation-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.afajic.geoDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -625,13 +647,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = geoDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SessionMLocation-SDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.af.geoDash;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.afajic.geoDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
