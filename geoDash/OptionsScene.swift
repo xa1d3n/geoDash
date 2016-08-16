@@ -8,8 +8,10 @@
 
 import SpriteKit
 import GameKit
+import StoreKit
 
-class OptionsScene: SKScene, GKGameCenterControllerDelegate {
+
+class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDelegate {
     
     var score = Int()
     var highScore = Int()
@@ -27,6 +29,7 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate {
     var shareBtn = SKShapeNode()
     
     override func didMoveToView(view: SKView) {
+        requestProducts()
         authPlayer()
         animateTapLabel()
         
@@ -243,6 +246,19 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate {
         scene?.scaleMode = SKSceneScaleMode.AspectFill
         // load scene onto view
         view.presentScene(scene!, transition: transition)
+    }
+    
+    // check in app purchase products
+    func requestProducts() {
+        let ids : Set<String> = [Constants().productId]
+        let productsRequest = SKProductsRequest(productIdentifiers: ids)
+        productsRequest.delegate = self
+        productsRequest.start()
+    }
+    
+    func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        print(response.products.count)
+        print(response.invalidProductIdentifiers.count)
     }
     
 }

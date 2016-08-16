@@ -15,13 +15,13 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //kGADAdSizeSmartBannerPortrait
         let banner = GADBannerView(adSize: kGADAdSizeSmartBannerLandscape)
         banner.adUnitID = Constants().adUnitId
         banner.rootViewController = self
         let req : GADRequest = GADRequest()
+        req.testDevices = [kGADSimulatorID]
         banner.loadRequest(req)
-        banner.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, banner.frame.size.height)
+        banner.frame = CGRectMake(0, view.frame.size.height - banner.frame.size.height, UIScreen.mainScreen().bounds.width, banner.frame.size.height)
         self.view.addSubview(banner)
 
         if let scene = OptionsScene(fileNamed:"OptionsScene") {

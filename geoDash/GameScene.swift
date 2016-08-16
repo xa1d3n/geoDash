@@ -30,7 +30,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     var ogPlayerPositionX = CGFloat()
     
     override func didMoveToView(view: SKView) {
-        
         // update labels
         highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
         scoreLabel = scene?.childNodeWithName("ScoreLabel") as! SKLabelNode
