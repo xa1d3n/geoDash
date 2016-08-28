@@ -11,7 +11,7 @@ import GameKit
 import StoreKit
 
 
-class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDelegate {
+class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     var score = Int()
     var highScore = Int()
@@ -27,6 +27,7 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     
     var rate = SKShapeNode()
     var shareBtn = SKShapeNode()
+    var products = [SKProduct]()
     
     override func didMoveToView(view: SKView) {
         requestProducts()
@@ -81,6 +82,20 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     
     func createButtons() {
         let backColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
+        
+        let noAds = SKShapeNode(circleOfRadius: 100)
+        noAds.name = "noAds"
+        noAds.strokeColor = backColor
+        noAds.fillColor = backColor
+        noAds.position = CGPoint(x: 170, y: 240)
+        addChild(noAds)
+        
+        let restore = SKShapeNode(circleOfRadius:  100)
+        restore.name = "restore"
+        restore.strokeColor = backColor
+        restore.fillColor = backColor
+        restore.position = CGPoint(x: 10, y: 240)
+        addChild(restore)
         
         shareBtn = SKShapeNode(circleOfRadius: 100)
         shareBtn.name = "share"
@@ -186,10 +201,6 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
-            // get touch location
-            //let location = touch.locationInNode(self)
-            // get node being touched
-          //  let node = self.nodeAtPoint(location)
             let node = nodeAtPoint(touch.locationInNode(self))
             // check if retry button is clicked
             if node.name == "start" || node.name == "startLabel" || node.name == "tapStart" {
@@ -208,8 +219,28 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
             else if (node.name == "rate") {
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/square-lights/id1143377277?ls=1&mt=8")!)
             }
+            else if (node.name == "noAds") {
+                let formatter = NSNumberFormatter()
+                formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+                
+                for product in products {
+                    formatter.locale = product.priceLocale
+                    if let price = formatter.stringFromNumber(product.price) {
+                        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+                        let payment = SKPayment(product: product)
+                        SKPaymentQueue.defaultQueue().addPayment(payment)
+                    }
+                }
+            }
+            else if (node.name == "restore") {
+                restorePurchase()
+            }
 
         }
+    }
+    
+    func restorePurchase() {
+        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     }
     
     // open game center leaderboard
@@ -257,8 +288,39 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     }
     
     func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        print(response.products.count)
-        print(response.invalidProductIdentifiers.count)
+        products = response.products
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .Purchased:
+                // clear the transaction
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                print("Purchased")
+                removeAds(transaction.payment.productIdentifier)
+                break
+            case .Purchasing:
+                print("Purchasing")
+                break
+            case .Failed:
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                print("Failed")
+                break
+            case .Restored:
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                removeAds(transaction.payment.productIdentifier)
+                print("Restored")
+                break
+            case .Deferred:
+                print("Deferred")
+                break
+            }
+        }
+    }
+    
+    func removeAds(productIdentifier: String) {
+        // remove google ads banner
     }
     
 }
