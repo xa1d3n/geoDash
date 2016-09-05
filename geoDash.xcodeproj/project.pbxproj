@@ -11,6 +11,15 @@
 		A0064D411D3EA0E5007EF90F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = A0064D3F1D3EA0E5007EF90F /* spark.png */; };
 		A0064D431D3EA2E8007EF90F /* boxParticle.png in Resources */ = {isa = PBXBuildFile; fileRef = A0064D421D3EA2E8007EF90F /* boxParticle.png */; };
 		A0064D451D3EA6FF007EF90F /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0064D441D3EA6FF007EF90F /* Explosion.wav */; };
+		B3058D6D1D7E25E9009B193E /* swipe.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3058D6C1D7E25E9009B193E /* swipe.wav */; };
+		B3058D6F1D7E25F3009B193E /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3058D6E1D7E25F3009B193E /* tap.wav */; };
+		B3058D721D7E267B009B193E /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D711D7E267B009B193E /* Chartboost.framework */; };
+		B3058D741D7E2700009B193E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D731D7E2700009B193E /* UIKit.framework */; };
+		B3058D761D7E2709009B193E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D751D7E2709009B193E /* CoreGraphics.framework */; };
+		B3058D781D7E2713009B193E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D771D7E2713009B193E /* Foundation.framework */; };
+		B3058D7A1D7E27B1009B193E /* OptionsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3058D791D7E27B1009B193E /* OptionsScene.sks */; };
+		B3058D7C1D7E27CE009B193E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3058D7B1D7E27CE009B193E /* GameScene.sks */; };
+		B3058D7D1D7E28A8009B193E /* angrybirds-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3058D701D7E2620009B193E /* angrybirds-regular.ttf */; };
 		B335E2851D4D3FB600DEE6AD /* Obstacle3.sks in Resources */ = {isa = PBXBuildFile; fileRef = B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */; };
 		B3514FA91D5A9EA30098E6D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */; };
 		B3514FAB1D5A9EAB0098E6D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */; };
@@ -58,10 +67,8 @@
 		B39A41731D5D7A4E00A7BBFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */; };
 		B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */; };
 		B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */; };
-		B39C8BA91D567A2800F2ABC1 /* OptionsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */; };
 		B39C8BAB1D567DF300F2ABC1 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39C8BAA1D567DF300F2ABC1 /* OptionsScene.swift */; };
 		B3CC3A201D37270300C51406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A1F1D37270300C51406 /* AppDelegate.swift */; };
-		B3CC3A221D37270300C51406 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A211D37270300C51406 /* GameScene.sks */; };
 		B3CC3A261D37270300C51406 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A251D37270300C51406 /* GameViewController.swift */; };
 		B3CC3A291D37270300C51406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A271D37270300C51406 /* Main.storyboard */; };
 		B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3CC3A2A1D37270300C51406 /* Assets.xcassets */; };
@@ -73,6 +80,15 @@
 		A0064D3F1D3EA0E5007EF90F /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		A0064D421D3EA2E8007EF90F /* boxParticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxParticle.png; sourceTree = "<group>"; };
 		A0064D441D3EA6FF007EF90F /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
+		B3058D6C1D7E25E9009B193E /* swipe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swipe.wav; sourceTree = "<group>"; };
+		B3058D6E1D7E25F3009B193E /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
+		B3058D701D7E2620009B193E /* angrybirds-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "angrybirds-regular.ttf"; sourceTree = "<group>"; };
+		B3058D711D7E267B009B193E /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
+		B3058D731D7E2700009B193E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3058D751D7E2709009B193E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3058D771D7E2713009B193E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3058D791D7E27B1009B193E /* OptionsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsScene.sks; sourceTree = "<group>"; };
+		B3058D7B1D7E27CE009B193E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle3.sks; sourceTree = "<group>"; };
 		B33BB43D1D49814E00E0254B /* FlappyFont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlappyFont.TTF; sourceTree = "<group>"; };
 		B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -139,11 +155,9 @@
 		B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle2.sks; sourceTree = "<group>"; };
 		B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle4.sks; sourceTree = "<group>"; };
-		B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsScene.sks; sourceTree = "<group>"; };
 		B39C8BAA1D567DF300F2ABC1 /* OptionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 		B3CC3A1C1D37270300C51406 /* geoDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geoDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3CC3A1F1D37270300C51406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3CC3A211D37270300C51406 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B3CC3A231D37270300C51406 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B3CC3A251D37270300C51406 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B3CC3A281D37270300C51406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +171,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3058D781D7E2713009B193E /* Foundation.framework in Frameworks */,
+				B3058D761D7E2709009B193E /* CoreGraphics.framework in Frameworks */,
+				B3058D741D7E2700009B193E /* UIKit.framework in Frameworks */,
 				B3514FBB1D5A9EE70098E6D4 /* ImageIO.framework in Frameworks */,
 				B3514FB91D5A9EDF0098E6D4 /* StoreKit.framework in Frameworks */,
 				B39A41711D5D79E400A7BBFD /* GoogleMobileAds.framework in Frameworks */,
@@ -164,6 +181,7 @@
 				B39A416F1D5D70D500A7BBFD /* GameKit.framework in Frameworks */,
 				B3514FB51D5A9ECC0098E6D4 /* MediaPlayer.framework in Frameworks */,
 				B3514FB31D5A9EC50098E6D4 /* CoreMedia.framework in Frameworks */,
+				B3058D721D7E267B009B193E /* Chartboost.framework in Frameworks */,
 				B3514FB11D5A9EBE0098E6D4 /* CoreData.framework in Frameworks */,
 				B351500F1D5A9F7A0098E6D4 /* libSessionMLocation.1.15.7.a in Frameworks */,
 				B3514FAF1D5A9EB80098E6D4 /* EventKitUI.framework in Frameworks */,
@@ -179,12 +197,12 @@
 		B3282BAB1D4D302000BDA39B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B39C8BA81D567A2800F2ABC1 /* OptionsScene.sks */,
+				B3058D7B1D7E27CE009B193E /* GameScene.sks */,
+				B3058D791D7E27B1009B193E /* OptionsScene.sks */,
 				B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */,
 				B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */,
 				B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */,
 				B375DA4A1D3DA77C00E9D529 /* Obstacle1.sks */,
-				B3CC3A211D37270300C51406 /* GameScene.sks */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -192,6 +210,9 @@
 		B335E2861D4D497E00DEE6AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3058D701D7E2620009B193E /* angrybirds-regular.ttf */,
+				B3058D6E1D7E25F3009B193E /* tap.wav */,
+				B3058D6C1D7E25E9009B193E /* swipe.wav */,
 				A0064D3F1D3EA0E5007EF90F /* spark.png */,
 				A0064D3E1D3EA0E5007EF90F /* Explosion.sks */,
 				A0064D421D3EA2E8007EF90F /* boxParticle.png */,
@@ -336,6 +357,10 @@
 		B35150101D5A9F980098E6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3058D771D7E2713009B193E /* Foundation.framework */,
+				B3058D751D7E2709009B193E /* CoreGraphics.framework */,
+				B3058D731D7E2700009B193E /* UIKit.framework */,
+				B3058D711D7E267B009B193E /* Chartboost.framework */,
 				B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */,
 				B39A416E1D5D70D500A7BBFD /* GameKit.framework */,
 				B3514FC11D5A9F7A0098E6D4 /* SessionMLocation-SDK */,
@@ -459,10 +484,9 @@
 				B35150001D5A9F7A0098E6D4 /* m-button-circle-large.png in Resources */,
 				B35150081D5A9F7A0098E6D4 /* m-dropper-small.png in Resources */,
 				B351500E1D5A9F7A0098E6D4 /* non-branded-small.png in Resources */,
-				B3CC3A221D37270300C51406 /* GameScene.sks in Resources */,
+				B3058D7C1D7E27CE009B193E /* GameScene.sks in Resources */,
 				B35150031D5A9F7A0098E6D4 /* m-button-rectangle-large.png in Resources */,
 				B3CC3A2E1D37270300C51406 /* LaunchScreen.storyboard in Resources */,
-				B39C8BA91D567A2800F2ABC1 /* OptionsScene.sks in Resources */,
 				B351500C1D5A9F7A0098E6D4 /* non-branded-large.png in Resources */,
 				B3CC3A2B1D37270300C51406 /* Assets.xcassets in Resources */,
 				A0064D411D3EA0E5007EF90F /* spark.png in Resources */,
@@ -478,6 +502,7 @@
 				B3514FF71D5A9F7A0098E6D4 /* branded-prize-large.png in Resources */,
 				B3514FFF1D5A9F7A0098E6D4 /* branded-prize-button-small.png in Resources */,
 				B3514FFC1D5A9F7A0098E6D4 /* branded-prize-3d-small.png in Resources */,
+				B3058D7D1D7E28A8009B193E /* angrybirds-regular.ttf in Resources */,
 				B35150091D5A9F7A0098E6D4 /* m-trophy-large.png in Resources */,
 				B375DA4B1D3DA77C00E9D529 /* Obstacle1.sks in Resources */,
 				B35150021D5A9F7A0098E6D4 /* m-button-circle-small.png in Resources */,
@@ -489,11 +514,14 @@
 				B3514FFD1D5A9F7A0098E6D4 /* branded-prize-button-large.png in Resources */,
 				B35150061D5A9F7A0098E6D4 /* m-dropper-large.png in Resources */,
 				B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */,
+				B3058D7A1D7E27B1009B193E /* OptionsScene.sks in Resources */,
 				B35150011D5A9F7A0098E6D4 /* m-button-circle-medium.png in Resources */,
 				A0064D401D3EA0E5007EF90F /* Explosion.sks in Resources */,
+				B3058D6F1D7E25F3009B193E /* tap.wav in Resources */,
 				B3514FF81D5A9F7A0098E6D4 /* branded-prize-medium.png in Resources */,
 				B35ED6471D53DF9F00999876 /* bokeh.png in Resources */,
 				B35ED6431D53DF7500999876 /* MagitTest.sks in Resources */,
+				B3058D6D1D7E25E9009B193E /* swipe.wav in Resources */,
 				A0064D431D3EA2E8007EF90F /* boxParticle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

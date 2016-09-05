@@ -26,25 +26,48 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     var scoreTimer = NSTimer()
     var scoreLabel = SKLabelNode()
     var highScoreLabel = SKLabelNode()
+    var swipeIcon = SKSpriteNode()
+    var swipes = Int()
+    
+    var swipesLabel = SKLabelNode()
     var didTouchBoundries = false
     var ogPlayerPositionX = CGFloat()
     
     override func didMoveToView(view: SKView) {
         // update labels
-        highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
+        // highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
         scoreLabel = scene?.childNodeWithName("ScoreLabel") as! SKLabelNode
+        scoreLabel.fontName = "AngryBirds Regular"
+        scoreLabel.fontSize = 50
+        
+        swipeIcon = scene?.childNodeWithName("SwipeIcon") as! SKSpriteNode
+        swipeIcon.alpha = 0
+        
+        let swipeImg = SKSpriteNode(imageNamed: "swipe")
+        swipeImg.position = CGPoint(x: swipeIcon.position.x, y: swipeIcon.position.y)
+        addChild(swipeImg)
+        
+        swipesLabel = scene?.childNodeWithName("SwipeLabel") as! SKLabelNode
+        swipesLabel.fontName = "AngryBirds Regular"
+        swipesLabel.fontSize = 50
         
         // get high score
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if userDefaults.integerForKey("highScore") != 0 {
             highScore = userDefaults.integerForKey("highScore")
-            highScoreLabel.text = "Highscore : \(highScore)"
         }else {
             highScore = 0
-            highScoreLabel.text = "Highscore : \(highScore)"
         }
         
-        scoreLabel.text = "Score : \(score)"
+        if userDefaults.integerForKey("swipes") != 0 {
+            swipes = userDefaults.integerForKey("swipes")
+            swipesLabel.text = "\(swipes)"
+        } else {
+            swipes = 5
+            swipesLabel.text = "\(swipes)"
+        }
+        
+        scoreLabel.text = "\(score)"
         
         // scene will handle all the contacts within project
         self.physicsWorld.contactDelegate = self
@@ -69,42 +92,69 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     
     // teleport player. Turn off collision
     func swipedRight(sender:UISwipeGestureRecognizer){
-        // Player.physicsBody?.categoryBitMask = 999999
-        Player.physicsBody?.dynamic = false
         
-        let effect = SKEmitterNode(fileNamed: "MagitTest.sks")
-        let light = Player.childNodeWithName("light") as! SKLightNode
-        if Player.position.x == ogPlayerPositionX {
-            effect?.particleColor = light.lightColor
-            effect?.position = Player.position
-            addChild(effect!)
-        }
-        
-        Player.position.x = Player.position.x + 450
-        
-        if sender.state == .Ended {
-            Player.physicsBody?.dynamic = true
+        if swipes > 0 {
+            Player.physicsBody?.dynamic = false
             
-            // move to original x position
-            if Player.position.x != ogPlayerPositionX {
-                let action = SKAction.moveToX(ogPlayerPositionX, duration: 1.5)
-                let fadeAction = SKAction.fadeOutWithDuration(1.5)
-                effect?.runAction(fadeAction, completion: { 
-                    effect?.removeFromParent()
-                })
-                Player.runAction(action)
+            let effect = SKEmitterNode(fileNamed: "MagitTest.sks")
+            let light = Player.childNodeWithName("light") as! SKLightNode
+            if Player.position.x == ogPlayerPositionX {
+                effect?.particleColor = light.lightColor
+                effect?.position = Player.position
+                addChild(effect!)
+            }
+            
+            let sound = SKAction.playSoundFileNamed("swipe.wav", waitForCompletion: false)
+            runAction(sound)
+            Player.position.x = Player.position.x + 450
+            
+            if sender.state == .Ended {
+                Player.physicsBody?.dynamic = true
+                swipes = swipes - 1
+                swipesLabel.text = "\(swipes)"
+                
+                // move to original x position
+                if Player.position.x != ogPlayerPositionX {
+                    let action = SKAction.moveToX(ogPlayerPositionX, duration: 1.5)
+                    let fadeAction = SKAction.fadeOutWithDuration(1.5)
+                    effect?.runAction(fadeAction, completion: {
+                        effect?.removeFromParent()
+                    })
+                    Player.runAction(action)
+                }
             }
         }
     }
     
     func addScore() {
         score += 1
-        if score % 5 == 0 {
+        if score % 10 == 0 {
             let light = Player.childNodeWithName("light") as! SKLightNode
             let randomNumber = arc4random() % UInt32(lightColors.count)
             light.lightColor = lightColors[Int(randomNumber)]
         }
-        scoreLabel.text = "Score : \(score)"
+        
+        if score % 20 == 0 {
+            swipes = swipes + 1
+        }
+        
+        if score == 10 {
+            SessionM.sharedInstance().logAction("score_10")
+        }
+        else if (score == 30) {
+            SessionM.sharedInstance().logAction("score_30")
+        }
+        else if (score == 50) {
+            SessionM.sharedInstance().logAction("score_50")
+        }
+        else if (score == 80) {
+            SessionM.sharedInstance().logAction("score_80")
+        }
+        else if (score == 100) {
+            SessionM.sharedInstance().logAction("score_100")
+        }
+        
+        scoreLabel.text = "\(score)"
         
         let light = Player.childNodeWithName("light") as! SKLightNode
         // light.falloff = 3
@@ -126,7 +176,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
                 GKScore.reportScores(scoreArray, withCompletionHandler: nil)
             }
             
-            highScoreLabel.text = "Highscore : \(highScore)"
+            //highScoreLabel.text = "Highscore : \(highScore)"
             let userDefaults = NSUserDefaults.standardUserDefaults()
             // set new high score
             userDefaults.setInteger(highScore, forKey: "highScore")
@@ -136,7 +186,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     func jump() {
         // only jump if not currently jumping and if player touches screen
         if isTouching == true {
-            
+            let sound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
+            runAction(sound)
             Player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: -200))
             isJumping = true
         }
@@ -166,6 +217,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     func buildExplosion(spriteToExplode: SKSpriteNode) {
         // get the particle file
         let explosion = SKEmitterNode(fileNamed: "Explosion.sks")
+        let light = Player.childNodeWithName("light") as! SKLightNode
+        explosion?.particleColor = light.lightColor
         explosion?.numParticlesToEmit = 200
         explosion?.runAction(SKAction.playSoundFileNamed("Explosion.wav", waitForCompletion: false))
         
@@ -183,8 +236,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     
     func gameOver() {
         scoreTimer.invalidate()
+        
+        // get high score
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if userDefaults.integerForKey("gameOver") != 0 {
+            var gameOvers = userDefaults.integerForKey("gameOver")
+            gameOvers = gameOvers + 1
+            
+            if gameOvers == 3 {
+                if Chartboost.hasInterstitial(CBLocationHomeScreen) {
+                    Chartboost.showInterstitial(CBLocationHomeScreen)
+                } else {
+                    Chartboost.cacheInterstitial(CBLocationHomeScreen)
+                    Chartboost.showInterstitial(CBLocationHomeScreen)
+                }
+                gameOvers = 0
+            }
+            
+            userDefaults.setInteger(gameOvers, forKey: "gameOver")
+        } else {
+            userDefaults.setInteger(1, forKey: "gameOver")
+        }
+        
         // load up the scene again
         let scene = OptionsScene(fileNamed: "OptionsScene")
+        scene?.score = score
         let transition = SKTransition.crossFadeWithDuration(0.5)
         // create a new view
         let view = self.view as SKView!
@@ -194,6 +271,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         view.presentScene(scene!, transition: transition)
         
     }
+    
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // detect touching action

@@ -11,4 +11,6 @@ struct Constants {
     let adMobAppId = "ca-app-pub-4822034372319761~3924051937"
     let adUnitId = "ca-app-pub-4822034372319761/2585089536"
     let productId = "com.app.afajic.geoDash"
+    let chartAppId = "57c997eb04b0164597658d62"
+    let chartAppSig = "3d2bcd1688c6b87787754ded5cf4a21ecf81d2d9"
 }
