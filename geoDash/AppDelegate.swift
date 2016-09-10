@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SessionMDelegate, Chartbo
         }else {
             userDefaults.setInteger(15, forKey: "swipes")
         }
-
+        
         SessionM.sharedInstance().logAction("watch_video")
     }
     
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SessionMDelegate, Chartbo
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setInteger(5, forKey: "swipes")
-
+        
     }
     
     

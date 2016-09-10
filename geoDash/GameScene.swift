@@ -33,6 +33,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     var didTouchBoundries = false
     var ogPlayerPositionX = CGFloat()
     
+    var tapPic = SKSpriteNode()
+    var tapPicReal = SKSpriteNode()
+    var tapLabel = SKLabelNode()
+    
     override func didMoveToView(view: SKView) {
         // update labels
         // highScoreLabel = scene?.childNodeWithName("HighScoreLabel") as! SKLabelNode
@@ -88,6 +92,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         
         swipeRight.direction = .Right
         view.addGestureRecognizer(swipeRight)
+        
+     //   createTapInstructions()
+    }
+    
+    func createTapInstructions() {
+        // scoreTimer.invalidate()
+        // Player.physicsBody?.affectedByGravity = false
+        tapLabel = scene?.childNodeWithName("tapLabel") as! SKLabelNode
+        tapLabel.fontName = "AngryBirds Regular"
+        tapLabel.fontSize = 50
+        tapLabel.text = "Tap"
+        tapPic = scene?.childNodeWithName("tapPic") as! SKSpriteNode
+        tapPic.alpha = 0
+        tapPicReal = SKSpriteNode(imageNamed: "play")
+        tapPicReal.position = tapPic.position
+        addChild(tapPicReal)
     }
     
     // teleport player. Turn off collision
@@ -240,23 +260,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         // get high score
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        if userDefaults.integerForKey("gameOver") != 0 {
-            var gameOvers = userDefaults.integerForKey("gameOver")
-            gameOvers = gameOvers + 1
-            
-            if gameOvers == 3 {
-                if Chartboost.hasInterstitial(CBLocationHomeScreen) {
-                    Chartboost.showInterstitial(CBLocationHomeScreen)
-                } else {
-                    Chartboost.cacheInterstitial(CBLocationHomeScreen)
-                    Chartboost.showInterstitial(CBLocationHomeScreen)
+        if userDefaults.boolForKey("noAds") == false {
+            if userDefaults.integerForKey("gameOver") != 0 {
+                var gameOvers = userDefaults.integerForKey("gameOver")
+                gameOvers = gameOvers + 1
+                
+                if gameOvers == 3 {
+                    if Chartboost.hasInterstitial(CBLocationHomeScreen) {
+                        Chartboost.showInterstitial(CBLocationHomeScreen)
+                    } else {
+                        Chartboost.cacheInterstitial(CBLocationHomeScreen)
+                        Chartboost.showInterstitial(CBLocationHomeScreen)
+                    }
+                    gameOvers = 0
                 }
-                gameOvers = 0
+                
+                userDefaults.setInteger(gameOvers, forKey: "gameOver")
+            } else {
+                userDefaults.setInteger(1, forKey: "gameOver")
             }
-            
-            userDefaults.setInteger(gameOvers, forKey: "gameOver")
-        } else {
-            userDefaults.setInteger(1, forKey: "gameOver")
         }
         
         // load up the scene again
@@ -275,6 +297,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        tapLabel.removeFromParent()
+        tapPicReal.removeFromParent()
+        tapPic.removeFromParent()
+        
         // detect touching action
         isTouching = true
         
@@ -298,8 +324,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         jump()
     }
     
-    
-    
     func restartScene() {
         // load up the scene again
         let scene = GameScene(fileNamed: "GameScene")
@@ -318,8 +342,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         _ = Player.childNodeWithName("light") as! SKLightNode
         // light.falloff = 3
         isTouching = false
-        
-        
     }
     
     override func update(currentTime: CFTimeInterval) {

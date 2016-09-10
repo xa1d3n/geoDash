@@ -137,26 +137,7 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     func createButtons() {
         let backColor = UIColor(red:0.18, green:0.80, blue:0.44, alpha:1.0)
         
-        let noAds = SKShapeNode(circleOfRadius: 100)
-        noAds.name = "noAds"
-        noAds.strokeColor = backColor
-        noAds.fillColor = backColor
-        noAds.position = CGPoint(x: 200, y: 240)
-        let noLbl = SKLabelNode(text: "NO")
-        noLbl.fontName = "AngryBirds Regular"
-        noLbl.fontSize = 50
-        noLbl.position = CGPoint(x: 0, y: 20)
-        noLbl.color = UIColor.whiteColor()
-        noAds.addChild(noLbl)
-        let adsLbl = SKLabelNode(text: "ADS")
-        adsLbl.fontName = "AngryBirds Regular"
-        adsLbl.fontSize = 50
-        adsLbl.position = CGPoint(x: 0, y: -40)
-        adsLbl.color = UIColor.whiteColor()
-        noAds.addChild(adsLbl)
-        adsLbl.name = "noAds"
-        noLbl.name = "noAds"
-        addChild(noAds)
+        createNoAdsButton(backColor)
         
         let restore = SKShapeNode(circleOfRadius:  100)
         restore.name = "restore"
@@ -214,6 +195,19 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
         
         _ = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(OptionsScene.stretchCircle), userInfo: nil, repeats: true)
         
+        createRewardsButton(backColor)
+        
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+            self.spinCircle()
+        })
+        
+        _ = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(OptionsScene.spinCircle), userInfo: nil, repeats: true)
+        
+        addChild(rewards)
+    }
+    
+    func createRewardsButton(backColor: UIColor) {
         rewards = SKShapeNode(circleOfRadius: 100)
         rewards.name = "rewards"
         let rewardsIcon = SKSpriteNode(imageNamed: "reward")
@@ -237,15 +231,33 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
         rewardsCircleLabel.text = "\(SessionM.sharedInstance().user.unclaimedAchievementCount)"
         rewardsCircle.addChild(rewardsCircleLabel)
         rewards.addChild(rewardsCircle)
+    }
+    
+    func createNoAdsButton(backColor: UIColor) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
-            self.spinCircle()
-        })
-        
-        _ = NSTimer.scheduledTimerWithTimeInterval(6.0, target: self, selector: #selector(OptionsScene.spinCircle), userInfo: nil, repeats: true)
-        
-        addChild(rewards)
+        if userDefaults.boolForKey("noAds") == false {
+            let noAds = SKShapeNode(circleOfRadius: 100)
+            noAds.name = "noAds"
+            noAds.strokeColor = backColor
+            noAds.fillColor = backColor
+            noAds.position = CGPoint(x: 200, y: 240)
+            let noLbl = SKLabelNode(text: "NO")
+            noLbl.fontName = "AngryBirds Regular"
+            noLbl.fontSize = 50
+            noLbl.position = CGPoint(x: 0, y: 20)
+            noLbl.color = UIColor.whiteColor()
+            noAds.addChild(noLbl)
+            let adsLbl = SKLabelNode(text: "ADS")
+            adsLbl.fontName = "AngryBirds Regular"
+            adsLbl.fontSize = 50
+            adsLbl.position = CGPoint(x: 0, y: -40)
+            adsLbl.color = UIColor.whiteColor()
+            noAds.addChild(adsLbl)
+            adsLbl.name = "noAds"
+            noLbl.name = "noAds"
+            addChild(noAds)
+        }
     }
     
     func stretchCircle() {
@@ -297,7 +309,7 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
                 
                 for product in products {
                     formatter.locale = product.priceLocale
-                    if let price = formatter.stringFromNumber(product.price) {
+                    if formatter.stringFromNumber(product.price) != nil {
                         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
                         let payment = SKPayment(product: product)
                         SKPaymentQueue.defaultQueue().addPayment(payment)
@@ -377,9 +389,9 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
             switch transaction.transactionState {
             case .Purchased:
                 // clear the transaction
+                removeAds(transaction.payment.productIdentifier)
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
                 print("Purchased")
-                removeAds(transaction.payment.productIdentifier)
                 break
             case .Purchasing:
                 print("Purchasing")
@@ -389,8 +401,8 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
                 print("Failed")
                 break
             case .Restored:
-                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
                 removeAds(transaction.payment.productIdentifier)
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
                 print("Restored")
                 break
             case .Deferred:
@@ -402,6 +414,15 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
     
     func removeAds(productIdentifier: String) {
         // remove google ads banner
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setBool(true, forKey: "noAds")
+        let transition = SKTransition.crossFadeWithDuration(0.1)
+        let sceneNew = GameScene(fileNamed: "GameScene")
+        view!.presentScene(sceneNew!, transition: transition)
+        if let viewWithTag = self.view!.viewWithTag(100) {
+            viewWithTag.removeFromSuperview()
+        }
+        
     }
     
 }
