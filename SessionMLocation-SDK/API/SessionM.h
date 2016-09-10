@@ -7,7 +7,7 @@
 
 #ifndef __SESSIONM__
 #define __SESSIONM__
-#define __SESSIONM_SDK_VERSION__ @"1.15.7"
+#define __SESSIONM_SDK_VERSION__ @"1.15.8"
 #define __SESSIONM_SDK_MIN_SUPPORTED_DEVICE_VERSION__ 8.0f
 
 #import <UIKit/UIKit.h>
@@ -18,6 +18,8 @@
 #import "SMDefaultMessageView.h"
 #import "SMNotificationMessageData.h"
 #import "SMLoaderController.h"
+#import "SMReward.h"
+#import "SMContent.h"
 
 
 /*!
@@ -354,6 +356,27 @@ typedef enum SessionMSessionErrorType {
  */
 - (void)sessionMDidUpdateOrderStatus:(SessionM *)sessionM;
 /*!
+ @abstract Notifies delegate that offers data has been fetched.
+ @discussion This method is called in response to calling the @link fetchOffers @/link method.
+ @param sessionM SessionM service object.
+ @param offers The fetched offers data.
+ */
+- (void)sessionM:(SessionM *)sessionM didFetchOffers:(NSArray<NSDictionary *> *)offers;
+/*!
+ @abstract Notifies delegate that content data has been fetched.
+ @discussion This method is called in response to calling the @link fetchContentWithID:external: @/link method.
+ @param sessionM SessionM service object.
+ @param content The fetched content data.
+ */
+- (void)sessionM:(SessionM *)sessionM didFetchContent:(SMContent *)content;
+/*!
+ @abstract Notifies delegate that customer-defined data has been updated.
+ @discussion This method is called in response to calling the @link logAction:withCount:payloads: @/link method.
+ @param sessionM SessionM service object.
+ @param data The updated customer-defined data.
+ */
+- (void)sessionM:(SessionM *)sessionM didUpdateCustomerData:(NSDictionary *)data;
+/*!
  @abstract Notifies that media (typically video) will start playing.
  @discussion Application should use this method to suspend its own media playback if any.
  @param sessionM SessionM service object.
@@ -654,8 +677,25 @@ typedef struct SMLocationCoordinate2D {
     <li>image - NSString</li>
     <li>url - NSString</li>
  </ul>
+ @deprecated This property is deprecated - use @link rewardsList @/link instead.
  */
 @property(nonatomic, readonly) NSArray *rewards;
+/*!
+ @property rewardsList
+ @abstract An array of @link SMReward @/link objects representing rewards that can be redeemed by the user.
+ */
+@property(nonatomic, strong, readonly) NSArray<SMReward *> *rewardsList;
+/*!
+ @property tiers
+ @abstract An array of <code>NSDictionary</code> objects containing information on the available tiers in the rewards system.
+ @discussion Some rewards can only be redeemed by users who have achieved a specific tier. The tier information in the dictionary elements can be accessed with the @link SessionMTierIDKey @/link, @link SessionMTierInstructionsKey @/link, @link SessionMTierNameKey @/link, @link SessionMTierMultiplierKey @/link, @link SessionMTierStartValueKey @/link and @link SessionMTierEndValueKey @/link keys.
+ */
+@property(nonatomic, strong, readonly) NSArray<NSDictionary *> *tiers;
+/*!
+ @property applicationMultiplier
+ @abstract Returns multiplier bonus applied to points received by a user in the current application.
+ */
+@property(nonatomic, readonly) float applicationMultiplier;
 /*!
  @property messagesList
  @abstract An array of @link SMMessageData @/link objects representing in-app messages that the developer has configured in the SessionM Mobile Marketing Cloud portal.
@@ -803,6 +843,14 @@ typedef struct SMLocationCoordinate2D {
  @param messageID Message ID associated with the action. Used for adding payloads to the action.
  */
 - (void)logAction:(NSString *)action withCount:(NSUInteger)count messageID:(NSString *)messageID;
+/*!
+ @abstract Logs specified number of actions and presents an achievement activity if new achievement is earned.
+ @discussion If activity becomes available as a result of the action delegate method @link sessionM:shouldAutopresentActivity: @/link, if implemented, is called to determine if activity should be presented.
+ @param action Action name.
+ @param count Number of actions.
+ @param payloads Any additional developer-defined data associated with the action.
+ */
+- (void)logAction:(NSString *)action withCount:(NSUInteger)count payloads:(NSDictionary *)payloads;
 /*!
  @abstract Claims the specified achievement and presents an ad.
  @discussion The specified achievement cannot be claimed if the session is not online, if the achievement is not in the @link claimableAchievements @/link array, or if another activity is already presented.
@@ -966,7 +1014,6 @@ typedef struct SMLocationCoordinate2D {
  @discussion If a notification with a deep link or show ad action was received, but not yet displayed, this method will return YES. Otherwise will return NO.
  */
 - (BOOL)hasPendingNotification;
-
 /*!
  @abstract Convienence method for a MessageData view.
  @discussion This method will return a basic view the user can use to display the notification received. Call present on the SMDefaultMessageView to display the UI.
@@ -974,13 +1021,11 @@ typedef struct SMLocationCoordinate2D {
  @result SMDefaultMessageView customized to the messageData.
  */
 - (SMDefaultMessageView*)viewForMessageData:(SMMessageData*)messageData;
-
 /*!
 @abstract Tells SDK to act on a given message's action.
 @discussion If the SMMessageData has an ad to display, show it, if not, if the message has a pending deep link to perform do so. If the deep link is not recognized by the SDK, forward to the delegate call @link sessionM:handleDeepLinkString: @/link.
 */
 - (void)executeMessageAction:(SMMessageData*)messageData;
-
 /*!
  @abstract Uploads the specified image data to the SessionM Mobile Marketing Cloud with the specified URL.
  @discussion The @link sessionM:didUploadReceiptWithErrorMessage: @/link delegate method is called and the @link SMSessionMDidUploadReceiptNotification @/link notification is sent when the upload is finished.
@@ -990,6 +1035,26 @@ typedef struct SMLocationCoordinate2D {
  @result BOOL indicating whether the SDK will attempt to upload the receipt image. Returns <code>NO</code> if <code>image</code> is <code>nil</code>, or if <code>url.count</code> is <code>0</code>. Returns <code>YES</code> otherwise.
  */
 - (BOOL)uploadReceiptImage:(UIImage *)image withURL:(NSString *)url attributes:(NSDictionary *)attributes;
+/*!
+ @abstract Authenticates user with the specified OAuth token received from the specified provider.
+ @discussion The @link sessionM:didUpdateUserRegistrationResult:errorMessages: @/link delegate method is called when the authentication is finished.
+ @param provider OAuth token provider, such as "SessionM".
+ @param token The token string from the provider.
+ @result BOOL indicating whether the SDK will attempt to authenticate the user. Returns <code>NO</code> if session is not online, or if either <code>provider</code> or <code>token</code> is <code>nil</code> or empty. Returns <code>YES</code> otherwise.
+ */
+- (BOOL)authenticateWithProvider:(NSString *)provider token:(NSString *)token;
+/*!
+ @abstract Makes a request to fetch the data for all offers that can be redeemed by the user.
+ @discussion The @link sessionM:didFetchOffers: @/link delegate method is called when the offers data is updated.
+ */
+- (void)fetchOffers;
+/*!
+ @abstract Makes a request to fetch the data for the content with the specified ID.
+ @discussion The @link sessionM:didFetchContent: @/link delegate method is called when the content data is fetched.
+ @param contentID The ID of the content to be fetched.
+ @param isExternalID Indicates whether the provided content ID is an external (developer-defined) ID.
+ */
+- (void)fetchContentWithID:(NSString *)contentID external:(BOOL)isExternalID;
 
 @end
 
@@ -1096,6 +1161,11 @@ typedef enum SMAchievementDismissType {
  */
 @property(nonatomic, readonly) NSUInteger pointBalance;
 /*!
+ @property tierPointBalance
+ @abstract Returns user's current tier points balance.
+ */
+@property(nonatomic, readonly) unsigned long tierPointBalance;
+/*!
  @property unclaimedAchievementCount
  @abstract Returns user's unclaimed achievement count.
  */
@@ -1120,6 +1190,31 @@ typedef enum SMAchievementDismissType {
  @abstract Returns the subarray of @link achievementsList @/link that contains all achievements that the user can currently claim.
  */
 @property(nonatomic, strong, readonly) NSArray *claimableAchievements;
+/*!
+ @property tierIdentifier
+ @abstract Identifier string for user's current tier.
+ */
+@property(nonatomic, strong, readonly) NSString *tierIdentifier;
+/*!
+ @property tierName
+ @abstract User's current tier.
+ */
+@property(nonatomic, strong, readonly) NSString *tierName;
+/*!
+ @property tierAnniversaryDate
+ @abstract Date that the user achieved current tier.
+ */
+@property(nonatomic, strong, readonly) NSString *tierAnniversaryDate;
+/*!
+ @property startTier
+ @abstract User's tier at the start of the year.
+ */
+@property(nonatomic, strong, readonly) NSString *startTier;
+/*!
+ @property tierPercentage
+ @abstract User's progress towards next tier.
+ */
+@property(nonatomic, readonly) float tierPercentage;
 
 @end
 
@@ -1254,6 +1349,53 @@ extern NSString *const SMUserDataLastNameKey;
  @abstract Zipcode key.
  */
 extern NSString *const SMUserDataZipcodeKey;
+
+
+/*!
+ @group Rewards tier dictionary keys.
+ @abstract These keys can be used for accessing data from the <code>NSDictionary</code> elements in the @link tiers @/link array.
+ */
+
+/*!
+ @const SessionMTierIDKey
+ @abstract Returns tier identifier string.
+ */
+extern NSString *const SessionMTierIDKey;
+/*!
+ @const SessionMTierInstructionsKey
+ @abstract Returns instructions for achieving the tier.
+ */
+extern NSString *const SessionMTierInstructionsKey;
+/*!
+ @const SessionMTierNameKey
+ @abstract Returns tier name.
+ */
+extern NSString *const SessionMTierNameKey;
+/*!
+ @const SessionMTierMultiplierKey
+ @abstract Returns multiplier bonus applied to points received by a user who has reached the tier.
+ */
+extern NSString *const SessionMTierMultiplierKey;
+/*!
+ @const SessionMTierStartValueKey
+ @abstract Returns amount of points needed to reach the tier.
+ */
+extern NSString *const SessionMTierStartValueKey;
+/*!
+ @const SessionMTierEndValueKey
+ @abstract Returns amount of points needed to reach the next tier.
+ */
+extern NSString *const SessionMTierEndValueKey;
+/*!
+ @const SessionMTierSecurePercentKey
+ @abstract Returns fraction of points towards the next tier a user must earn to remain in the current tier.
+ */
+extern NSString *const SessionMTierSecurePercentKey;
+/*!
+ @const SessionMTierRequiredPointsKey
+ @abstract Returns amount of points a user must earn to remain in the tier.
+ */
+extern NSString *const SessionMTierRequiredPointsKey;
 
 
 #endif /* __SESSIONM__ */
