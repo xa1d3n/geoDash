@@ -13,7 +13,6 @@
 		A0064D451D3EA6FF007EF90F /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0064D441D3EA6FF007EF90F /* Explosion.wav */; };
 		B3058D6D1D7E25E9009B193E /* swipe.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3058D6C1D7E25E9009B193E /* swipe.wav */; };
 		B3058D6F1D7E25F3009B193E /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3058D6E1D7E25F3009B193E /* tap.wav */; };
-		B3058D721D7E267B009B193E /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D711D7E267B009B193E /* Chartboost.framework */; };
 		B3058D741D7E2700009B193E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D731D7E2700009B193E /* UIKit.framework */; };
 		B3058D761D7E2709009B193E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D751D7E2709009B193E /* CoreGraphics.framework */; };
 		B3058D781D7E2713009B193E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3058D771D7E2713009B193E /* Foundation.framework */; };
@@ -21,6 +20,7 @@
 		B3058D7C1D7E27CE009B193E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B3058D7B1D7E27CE009B193E /* GameScene.sks */; };
 		B3058D7D1D7E28A8009B193E /* angrybirds-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3058D701D7E2620009B193E /* angrybirds-regular.ttf */; };
 		B335E2851D4D3FB600DEE6AD /* Obstacle3.sks in Resources */ = {isa = PBXBuildFile; fileRef = B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */; };
+		B340B75C1D95BDD1008B735E /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B340B75B1D95BDD1008B735E /* GoogleMobileAds.framework */; };
 		B3514FA91D5A9EA30098E6D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */; };
 		B3514FAB1D5A9EAB0098E6D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */; };
 		B3514FAD1D5A9EB30098E6D4 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3514FAC1D5A9EB30098E6D4 /* EventKit.framework */; };
@@ -61,9 +61,9 @@
 		B385EE411D84B29F002EBEA4 /* non-branded-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = B385EE281D84B29F002EBEA4 /* non-branded-medium.png */; };
 		B385EE421D84B29F002EBEA4 /* non-branded-small.png in Resources */ = {isa = PBXBuildFile; fileRef = B385EE291D84B29F002EBEA4 /* non-branded-small.png */; };
 		B385EE431D84B29F002EBEA4 /* libSessionMLocation.1.15.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B385EE2A1D84B29F002EBEA4 /* libSessionMLocation.1.15.8.a */; };
+		B38D2EE11D8EF22F00F049F2 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38D2EE01D8EF22F00F049F2 /* Chartboost.framework */; };
 		B39A416D1D5BFF8600A7BBFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC3A231D37270300C51406 /* GameScene.swift */; };
 		B39A416F1D5D70D500A7BBFD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39A416E1D5D70D500A7BBFD /* GameKit.framework */; };
-		B39A41711D5D79E400A7BBFD /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */; };
 		B39A41731D5D7A4E00A7BBFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */; };
 		B39C8BA51D566D3500F2ABC1 /* Obstacle2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */; };
 		B39C8BA71D566DA800F2ABC1 /* Obstacle4.sks in Resources */ = {isa = PBXBuildFile; fileRef = B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */; };
@@ -83,7 +83,6 @@
 		B3058D6C1D7E25E9009B193E /* swipe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = swipe.wav; sourceTree = "<group>"; };
 		B3058D6E1D7E25F3009B193E /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
 		B3058D701D7E2620009B193E /* angrybirds-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "angrybirds-regular.ttf"; sourceTree = "<group>"; };
-		B3058D711D7E267B009B193E /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		B3058D731D7E2700009B193E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3058D751D7E2709009B193E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3058D771D7E2713009B193E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,6 +90,7 @@
 		B3058D7B1D7E27CE009B193E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B335E2841D4D3FB600DEE6AD /* Obstacle3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle3.sks; sourceTree = "<group>"; };
 		B33BB43D1D49814E00E0254B /* FlappyFont.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = FlappyFont.TTF; sourceTree = "<group>"; };
+		B340B75B1D95BDD1008B735E /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		B3514FA81D5A9EA30098E6D4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3514FAA1D5A9EAA0098E6D4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3514FAC1D5A9EB30098E6D4 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -152,8 +152,8 @@
 		B385EE281D84B29F002EBEA4 /* non-branded-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-medium.png"; sourceTree = "<group>"; };
 		B385EE291D84B29F002EBEA4 /* non-branded-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "non-branded-small.png"; sourceTree = "<group>"; };
 		B385EE2A1D84B29F002EBEA4 /* libSessionMLocation.1.15.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSessionMLocation.1.15.8.a; sourceTree = "<group>"; };
+		B38D2EE01D8EF22F00F049F2 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		B39A416E1D5D70D500A7BBFD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		B39A41721D5D7A4E00A7BBFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B39C8BA41D566D3500F2ABC1 /* Obstacle2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle2.sks; sourceTree = "<group>"; };
 		B39C8BA61D566DA800F2ABC1 /* Obstacle4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle4.sks; sourceTree = "<group>"; };
@@ -176,19 +176,19 @@
 				B3058D781D7E2713009B193E /* Foundation.framework in Frameworks */,
 				B3058D761D7E2709009B193E /* CoreGraphics.framework in Frameworks */,
 				B3058D741D7E2700009B193E /* UIKit.framework in Frameworks */,
+				B38D2EE11D8EF22F00F049F2 /* Chartboost.framework in Frameworks */,
 				B385EE431D84B29F002EBEA4 /* libSessionMLocation.1.15.8.a in Frameworks */,
 				B3514FBB1D5A9EE70098E6D4 /* ImageIO.framework in Frameworks */,
 				B3514FB91D5A9EDF0098E6D4 /* StoreKit.framework in Frameworks */,
-				B39A41711D5D79E400A7BBFD /* GoogleMobileAds.framework in Frameworks */,
 				B3514FB71D5A9ED20098E6D4 /* AdSupport.framework in Frameworks */,
 				B39A416F1D5D70D500A7BBFD /* GameKit.framework in Frameworks */,
 				B3514FB51D5A9ECC0098E6D4 /* MediaPlayer.framework in Frameworks */,
 				B3514FB31D5A9EC50098E6D4 /* CoreMedia.framework in Frameworks */,
-				B3058D721D7E267B009B193E /* Chartboost.framework in Frameworks */,
 				B3514FB11D5A9EBE0098E6D4 /* CoreData.framework in Frameworks */,
 				B3514FAF1D5A9EB80098E6D4 /* EventKitUI.framework in Frameworks */,
 				B3514FAD1D5A9EB30098E6D4 /* EventKit.framework in Frameworks */,
 				B3514FAB1D5A9EAB0098E6D4 /* AVFoundation.framework in Frameworks */,
+				B340B75C1D95BDD1008B735E /* GoogleMobileAds.framework in Frameworks */,
 				B3514FA91D5A9EA30098E6D4 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,12 +229,12 @@
 		B35150101D5A9F980098E6D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B340B75B1D95BDD1008B735E /* GoogleMobileAds.framework */,
+				B38D2EE01D8EF22F00F049F2 /* Chartboost.framework */,
 				B385EDF31D84B29F002EBEA4 /* SessionMLocation-SDK */,
 				B3058D771D7E2713009B193E /* Foundation.framework */,
 				B3058D751D7E2709009B193E /* CoreGraphics.framework */,
 				B3058D731D7E2700009B193E /* UIKit.framework */,
-				B3058D711D7E267B009B193E /* Chartboost.framework */,
-				B39A41701D5D79E400A7BBFD /* GoogleMobileAds.framework */,
 				B39A416E1D5D70D500A7BBFD /* GameKit.framework */,
 				B3514FBA1D5A9EE60098E6D4 /* ImageIO.framework */,
 				B3514FB81D5A9EDF0098E6D4 /* StoreKit.framework */,
@@ -661,6 +661,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = geoDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,6 +671,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -684,6 +686,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = geoDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,6 +695,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.afajic.geoDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "geoDash/geoDash-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
