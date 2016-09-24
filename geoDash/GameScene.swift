@@ -112,6 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     // teleport player. Turn off collision
     func swipedRight(sender:UISwipeGestureRecognizer){
         swipeLabel.removeFromParent()
+        SessionM.sharedInstance().logAction("teleport")
         if swipes > 0 {
             Player.physicsBody?.dynamic = false
             
