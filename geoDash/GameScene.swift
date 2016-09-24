@@ -36,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
     var tapPic = SKSpriteNode()
     var tapPicReal = SKSpriteNode()
     var tapLabel = SKLabelNode()
+    var swipeLabel = SKLabelNode()
     
     override func didMoveToView(view: SKView) {
         // update labels
@@ -93,26 +94,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         swipeRight.direction = .Right
         view.addGestureRecognizer(swipeRight)
         
-     //   createTapInstructions()
+        createTapInstructions()
     }
     
     func createTapInstructions() {
-        // scoreTimer.invalidate()
-        // Player.physicsBody?.affectedByGravity = false
         tapLabel = scene?.childNodeWithName("tapLabel") as! SKLabelNode
         tapLabel.fontName = "AngryBirds Regular"
-        tapLabel.fontSize = 50
-        tapLabel.text = "Tap"
-        tapPic = scene?.childNodeWithName("tapPic") as! SKSpriteNode
-        tapPic.alpha = 0
-        tapPicReal = SKSpriteNode(imageNamed: "play")
-        tapPicReal.position = tapPic.position
-        addChild(tapPicReal)
+        tapLabel.fontSize = 80
+        tapLabel.text = "TAP TAP"
+        tapLabel.fontColor = UIColor.yellowColor()
+        tapLabel.runAction(fadeAction())
+        
+        swipeLabel.alpha = 0
+
     }
     
     // teleport player. Turn off collision
     func swipedRight(sender:UISwipeGestureRecognizer){
-        
+        swipeLabel.removeFromParent()
         if swipes > 0 {
             Player.physicsBody?.dynamic = false
             
@@ -294,10 +293,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GKGameCenterControllerDelega
         
     }
     
-    
+    func fadeAction() -> SKAction {
+        let fadeOut = SKAction.fadeOutWithDuration(0.5)
+        let fadeIn = SKAction.fadeInWithDuration(0.5)
+        let sequence = SKAction.sequence([fadeIn, fadeOut])
+        let runForever = SKAction.repeatActionForever(sequence)
+        return runForever
+    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+        if (self.childNodeWithName("tapLabel") != nil) {
+
+            swipeLabel = scene?.childNodeWithName("swipeLabel") as! SKLabelNode
+            swipeLabel.fontName = "AngryBirds Regular"
+            swipeLabel.fontSize = 80
+            swipeLabel.text = "SWIPE TO TELEPORT"
+            swipeLabel.fontColor = UIColor.yellowColor()
+            swipeLabel.runAction(fadeAction())
+            swipeLabel.alpha = 1.0
+        }
+        
         tapLabel.removeFromParent()
+        
         tapPicReal.removeFromParent()
         tapPic.removeFromParent()
         
