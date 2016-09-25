@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:geoDash.xcodeproj">
+      location = "self:/Users/aldinfajic/Documents/GeoDash/geoDash/Flier Fly.xcodeproj">
    </FileRef>
 </Workspace>

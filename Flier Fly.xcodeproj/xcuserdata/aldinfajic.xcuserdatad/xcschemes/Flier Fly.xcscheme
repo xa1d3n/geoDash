@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3CC3A1B1D37270300C51406"
-               BuildableName = "geoDash.app"
-               BlueprintName = "geoDash"
-               ReferencedContainer = "container:geoDash.xcodeproj">
+               BuildableName = "Flier Fly.app"
+               BlueprintName = "Flier Fly"
+               ReferencedContainer = "container:Flier Fly.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3CC3A1B1D37270300C51406"
-            BuildableName = "geoDash.app"
-            BlueprintName = "geoDash"
-            ReferencedContainer = "container:geoDash.xcodeproj">
+            BuildableName = "Flier Fly.app"
+            BlueprintName = "Flier Fly"
+            ReferencedContainer = "container:Flier Fly.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3CC3A1B1D37270300C51406"
-            BuildableName = "geoDash.app"
-            BlueprintName = "geoDash"
-            ReferencedContainer = "container:geoDash.xcodeproj">
+            BuildableName = "Flier Fly.app"
+            BlueprintName = "Flier Fly"
+            ReferencedContainer = "container:Flier Fly.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B3CC3A1B1D37270300C51406"
-            BuildableName = "geoDash.app"
-            BlueprintName = "geoDash"
-            ReferencedContainer = "container:geoDash.xcodeproj">
+            BuildableName = "Flier Fly.app"
+            BlueprintName = "Flier Fly"
+            ReferencedContainer = "container:Flier Fly.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

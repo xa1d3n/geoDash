@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SessionMDelegate, Chartbo
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch {
+            print("could not remove file")
+        }
+        
         // sessionM
         SessionM.sharedInstance().delegate = self
         SessionM.sharedInstance().startSessionWithAppID(Constants().sessionMKey)
