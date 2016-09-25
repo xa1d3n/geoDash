@@ -301,7 +301,7 @@ class OptionsScene: SKScene, GKGameCenterControllerDelegate, SKProductsRequestDe
             }
             else if (node.name == "rate") {
                 SessionM.sharedInstance().logAction("rate_app")
-                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/square-lights/id1143377277?ls=1&mt=8")!)
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/flier-fly/id1143377277?ls=1&mt=8")!)
             }
             else if (node.name == "noAds") {
                 let formatter = NSNumberFormatter()
